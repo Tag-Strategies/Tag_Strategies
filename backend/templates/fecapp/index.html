@@ -1,0 +1,10 @@
+<div>
+  <h1>Politicians</h1>
+</div>
+
+{% for politician in politicians %}
+  <div>
+    <h2><a href="#">{{ politician.firstName}} {{politician.lastName}}</a></h2>
+    <p>Address: {{ politician.lastName }}</p>
+  </div>
+{% endfor %}

@@ -10,7 +10,7 @@ const ColorDisplay = (props) => {
 };
 
 ColorDisplay.defaultProps = {
-  color: 'black',
+  color: 'blue',
 };
 
 ColorDisplay.propTypes = {

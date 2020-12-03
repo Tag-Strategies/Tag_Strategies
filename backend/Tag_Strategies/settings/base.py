@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     "import_export",
     "common",
     "users",
+    "rest_framework",
+    "fec",
+    "django_tables2",
 ]
 
 MIDDLEWARE = [
