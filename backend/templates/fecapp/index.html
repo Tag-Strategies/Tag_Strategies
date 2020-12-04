@@ -2,9 +2,8 @@
   <h1>Politicians</h1>
 </div>
 
-{% for politician in politicians %}
+{% for politician in form %}
   <div>
-    <h2><a href="#">{{ politician.firstName}} {{politician.lastName}}</a></h2>
-    <p>Address: {{ politician.lastName }}</p>
+    <h2><a href="#">{{ politician}}</a></h2>
   </div>
 {% endfor %}
