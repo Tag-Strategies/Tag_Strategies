@@ -20,34 +20,34 @@ class PoliticianListView(ListView):
 
 def politician_list(request):
     politicians = Politician.objects.all()
-    return render(request, 'fecapp/index.html', {'politicians': politicians})
+    return render(request, 'fecapp/index.html', {'x': politicians})
 
-def save_embed(request):
-    name_database={}
-    if True:
-        form = SubmitEmbed(request.POST)
-        if True:
-            #url = form.cleaned_data['url']
-            r = requests.get("https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page=1&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
-            json = r.json()
-            #print(json["pagination"]["pages"])
-    for j in range(1, 5, json["pagination"]["pages"]):
-        d = requests.get(f"https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page={j}&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
-        other_json = d.json()
-        for i in range(1, len(other_json['results'])):
-            #print(other_json['results'][i]['name'])
-            name_database.append(other_json['results'][i]['name'])
-    print(name_database)
-    serializer = PoliticianSerializer(data=name_database)
-    if serializer.is_valid():
-        print("here")
-        embed = serializer.save()
-        #print(embed)
-        return render(request, 'fecapp/x.html', {'embed': name_database})
-    else:
-        form = SubmitEmbed()
-    print(serializer.errors)
-    return render(request, 'fecapp/index.html', {'form': name_database})
+# def save_embed(request):
+#     name_database={}
+#     if True:
+#         form = SubmitEmbed(request.POST)
+#         if True:
+#             #url = form.cleaned_data['url']
+#             r = requests.get("https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page=1&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
+#             json = r.json()
+#             #print(json["pagination"]["pages"])
+#     for j in range(1, 5, json["pagination"]["pages"]):
+#         d = requests.get(f"https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page={j}&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
+#         other_json = d.json()
+#         for i in range(1, len(other_json['results'])):
+#             #print(other_json['results'][i]['name'])
+#             name_database.append(other_json['results'][i]['name'])
+#     print(name_database)
+#     serializer = PoliticianSerializer(data=name_database)
+#     if serializer.is_valid():
+#         print("here")
+#         embed = serializer.save()
+#         #print(embed)
+#         return render(request, 'fecapp/x.html', {'embed': name_database})
+#     else:
+#         form = SubmitEmbed()
+#     print(serializer.errors)
+#     return render(request, 'fecapp/index.html', {'form': name_database})
 
 def get_total_page_numbers():
     response = requests.get("https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page=1&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
