@@ -1,9 +1,13 @@
-<div>
-  <h1>Politicians</h1>
-</div>
+{% extends 'base.html' %}
 
-{% for politician in x %}
+{% block  body%}
   <div>
-    <p><a href="/" style="font-size:9pt">{{politician}}</a></p>
+    <h1>Politicians</h1>
   </div>
-{% endfor %}
+
+  {% for politician in x %}
+    <div>
+      <p><a href="/" style="font-size:9pt">{{politician}}</a></p>
+    </div>
+  {% endfor %}
+{% endblock  %}
