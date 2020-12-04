@@ -10,10 +10,10 @@
 
   <div id="react-app"></div>
 
-  <h2>Simple django poll App</h2>
+  {% comment %} <h2>Simple django poll App</h2> {% endcomment %}
  
 
-  <h3>Polls</h3>
+  {% comment %} <h3>Polls</h3>
   {% if latest_question_list %}
     <p>List of polls available:</p>
     <ul>
@@ -23,5 +23,5 @@
     </ul>
   {% else %}
     <p>No polls are available.</p>
-  {% endif %}
+  {% endif %} {% endcomment %}
 {% endblock %}

@@ -4,5 +4,5 @@ from . import views
 
 app_name = 'fecapp'
 urlpatterns = [
-    path('', views.politician_list, name='politicianList'),
+    path('', views.politicians_list, name='politicianList'),
 ]

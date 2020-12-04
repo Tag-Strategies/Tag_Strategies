@@ -5,4 +5,4 @@ class PoliticianSerializer(serializers.ModelSerializer):
     name = serializers.CharField(required=True, max_length=100)
     class Meta:
         model = Politician
-        fields = '__all__'
+        fields = ('pk', 'name')

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "fec",
     "django_tables2",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware", #Corresponds to a filter that’ll intercept all of our application’s requests and apply CORS logic to them.
 ]
 
 ROOT_URLCONF = "Tag_Strategies.urls"
@@ -114,3 +116,6 @@ CELERY_TIMEZONE = TIME_ZONE
 # Sentry
 SENTRY_DSN = config("SENTRY_DSN", default="")
 COMMIT_SHA = config("HEROKU_SLUG_COMMIT", default="")
+
+#CORS - tutorial https://blog.logrocket.com/creating-an-app-with-react-and-django/
+CORS_ORIGIN_ALLOW_ALL = True

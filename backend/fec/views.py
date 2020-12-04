@@ -2,10 +2,44 @@ import requests
 from django.shortcuts import render
 from .models import Politician
 from django.core.exceptions import ObjectDoesNotExist
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework import status
+from .serializer import *
 
-def politician_list(request):
-    politicians = Politician.objects.all()
-    return render(request, 'fecapp/index.html', {'x': politicians})
+@api_view(['GET', 'POST'])
+def politicians_list(request):
+    if request.method == 'GET':
+        data = Politician.objects.all()
+        serializer = PoliticianSerializer(data, context={'request': request}, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = PoliticianSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_201_CREATED)
+            
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PUT', 'DELETE'])
+def politicians_detail(request, pk):
+    try:
+        politician = Politician.objects.get(pk=pk)
+    except Politician.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'PUT':
+        serializer = PoliticianSerializer(politician, data=request.data,context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        politician.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
 
 def get_total_page_numbers():
     response = requests.get("https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page=1&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
