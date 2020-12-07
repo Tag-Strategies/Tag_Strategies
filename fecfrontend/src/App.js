@@ -19,10 +19,10 @@ class App extends Component {
     this.refreshList();
   }
   refreshList = () => {
-    
-    axios.get("http://localhost:8000/api/politicians/")
-    axios.then(res => this.setState({ todoList: res.data }))
-    axios.catch(err => console.log(err));
+    axios
+      .get("http://localhost:8000/api/todos/")
+      .then(res => this.setState({ todoList: res.data }))
+      .catch(err => console.log(err));
   };
   displayCompleted = status => {
     if (status) {
@@ -91,17 +91,17 @@ class App extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`http://localhost:8000/api/politicians/${item.id}/`, item)
+        .put(`http://localhost:8000/api/todos/${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("http://localhost:8000/api/politicians/", item)
+      .post("http://localhost:8000/api/todos/", item)
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`http://localhost:8000/api/politicians/${item.id}`)
+      .delete(`http://localhost:8000/api/todos/${item.id}`)
       .then(res => this.refreshList());
   };
   createItem = () => {
