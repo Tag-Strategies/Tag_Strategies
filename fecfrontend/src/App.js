@@ -5,6 +5,7 @@ import axios from "axios";
 class App extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props)
     this.state = {
       viewCompleted: false,
       activeItem: {
@@ -20,9 +21,11 @@ class App extends Component {
   }
   refreshList = () => {
     axios
-      .get("http://localhost:8000/api/todos/")
-      .then(res => this.setState({ todoList: res.data }))
-      .catch(err => console.log(err));
+      .get("http://localhost:8000/api/politicians/")
+      .then(res => {
+        console.log(res.data);
+        this.setState({ todoList: res.data })
+      });
   };
   displayCompleted = status => {
     if (status) {
@@ -50,21 +53,21 @@ class App extends Component {
   };
   renderItems = () => {
     const { viewCompleted } = this.state;
-    const newItems = this.state.todoList.filter(
-      item => item.completed === viewCompleted
-    );
+    const newItems = this.state.todoList;
+    console.log(newItems)
     return newItems.map(item => (
       <li
-        key={item.id}
+        key={item.name}
         className="list-group-item d-flex justify-content-between align-items-center"
       >
         <span
           className={`todo-title mr-2 ${
             this.state.viewCompleted ? "completed-todo" : ""
           }`}
-          title={item.description}
+          title={item.pk}
         >
-          {item.title}
+          {item.name}
+          {item.pk}
         </span>
         <span>
           <button
