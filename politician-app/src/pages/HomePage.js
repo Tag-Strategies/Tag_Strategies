@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import '../App.css';
 import { Helmet } from "react-helmet";
-import { PoliticalMap } from '../components/PoliticianList/CongressMap.js'
+import { PoliticalMap } from '../components/PoliticianList/PoliticalMap.js'
 
 class HomePage extends Component {
 
