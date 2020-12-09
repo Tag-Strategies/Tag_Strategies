@@ -4,8 +4,8 @@ import PoliticianList from '../components/PoliticianList/PoliticianList.js'
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import '../App.css';
-
- 
+import { Helmet } from "react-helmet";
+import { PoliticalMap } from '../components/PoliticianList/CongressMap.js'
 
 class HomePage extends Component {
 
@@ -27,6 +27,11 @@ class HomePage extends Component {
   render() {
     return (
       <div className="combo-box-div">
+        <Helmet>
+          <title>HomePage</title>
+          <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+          <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+        </Helmet>
         <h1>Home Page</h1>
         <div className='inside'>
           <Autocomplete
@@ -36,6 +41,9 @@ class HomePage extends Component {
             style={{ width: 300 }}
             renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
           />
+        </div>
+        <div id="chartdiv">
+          <PoliticalMap />
         </div>
       </div>
     )
