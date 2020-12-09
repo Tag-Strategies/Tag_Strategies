@@ -29,10 +29,10 @@ class HomePage extends Component {
       <div className="combo-box-div">
         <Helmet>
           <title>HomePage</title>
-          <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-          <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+          {/* <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+          <script src="https://cdn.amcharts.com/lib/4/charts.js"></script> */}
         </Helmet>
-        <h1>Home Page</h1>
+        <h1>TAG Political Finance Tracker</h1>
         <div className='inside'>
           <Autocomplete
             id="name-combo-box"
