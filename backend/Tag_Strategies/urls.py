@@ -12,7 +12,7 @@ urlpatterns = [
     path("jsreverse/", django_js_reverse.views.urls_js, name="js_reverse"),
     path("exampleapp/", include("exampleapp.urls"), name="exampleapp"),
     path("politicians/", include("fec.urls"), name="fecapp"),
-    path("p/", views.get_names),
+    path("populate_database_with_names/", views.get_names),
     re_path(r'^api/politicians/$', views.politicians_list),
     # re_path(r'^api/politicians/([0-9])$', views.politicians_detail),
 ]

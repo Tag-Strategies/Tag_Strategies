@@ -39,7 +39,7 @@ class HomePage extends Component {
             options={this.state.politicians}
             getOptionLabel={(option) => option.name}
             style={{ width: 300 }}
-            renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+            renderInput={(params) => <TextField {...params} label="Ex. Trump, Donald" variant="outlined" />}
           />
         </div>
         <div id="chartdiv">

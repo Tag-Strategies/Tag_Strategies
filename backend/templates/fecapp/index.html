@@ -2,12 +2,12 @@
 
 {% block  body%}
   <div>
-    <h1>Politicians</h1>
+    <h1>List of politicians in the database.</h1>
   </div>
 
-  {% for politician in x %}
+  {% for politician in nameList %}
     <div>
-      <p><a href="/" style="font-size:9pt">{{politician}}</a></p>
+      <p><a href="#" style="font-size:9pt">{{politician}}</a></p>
     </div>
   {% endfor %}
 {% endblock  %}
