@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Modal from "./components/Modal";
 import axios from "axios";
+import PoliticianSelect from "./components/SearchBar"
 
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props)
     this.state = {
       viewCompleted: false,
       activeItem: {
@@ -13,19 +13,17 @@ class App extends Component {
         description: "",
         completed: false
       },
-      todoList: []
+      politicianList: []
     };
   }
   componentDidMount() {
     this.refreshList();
   }
   refreshList = () => {
-    axios
-      .get("http://localhost:8000/api/politicians/")
-      .then(res => {
-        console.log(res.data);
-        this.setState({ todoList: res.data })
-      });
+    const req = axios.get("http://localhost:8000/api/politicians/");
+    const res => await req;
+    res.data.args
+     
   };
   displayCompleted = status => {
     if (status) {
@@ -52,33 +50,31 @@ class App extends Component {
     );
   };
   renderItems = () => {
-    const { viewCompleted } = this.state;
-    const newItems = this.state.todoList;
-    console.log(newItems)
-    return newItems.map(item => (
+    const { viewCompleted, politicianList } = this.state;
+    return politicianList.map(politician => (
       <li
-        key={item.name}
+        key={politician.name}
         className="list-group-item d-flex justify-content-between align-items-center"
       >
         <span
           className={`todo-title mr-2 ${
-            this.state.viewCompleted ? "completed-todo" : ""
+            viewCompleted ? "completed-todo" : ""
           }`}
-          title={item.pk}
+          title={politician.pk}
         >
-          {item.name}
-          {item.pk}
+          <p>{politician.name}</p>
+          <p>{politician.pk}</p>
         </span>
         <span>
           <button
-            onClick={() => this.editItem(item)}
+            onClick={() => this.editItem(politician)}
             className="btn btn-secondary mr-2"
           >
             {" "}
             Edit{" "}
           </button>
           <button
-            onClick={() => this.handleDelete(item)}
+            onClick={() => this.handleDelete(politician)}
             className="btn btn-danger"
           >
             Delete{" "}
@@ -125,6 +121,10 @@ class App extends Component {
                 <button onClick={this.createItem} className="btn btn-primary">
                   Add task
                 </button>
+                <div>
+                  <PoliticianSelect />
+                  <p>Accordion here</p>
+                </div>
               </div>
               {this.renderTabList()}
               <ul className="list-group list-group-flush">
