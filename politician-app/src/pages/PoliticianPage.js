@@ -32,7 +32,6 @@ class Map extends Component {
       zoom: this.map.getZoom().toFixed(2)
       });
     });
-    
   }
 
   render() {
@@ -44,8 +43,7 @@ class Map extends Component {
         <div className='container'>
           <h1>TAG Political Finance Map</h1>
           <div className='row'>
-            <div className='col' onMouseOver={ () => {this._Update()}} id="chartdiv" ref={el => this.mapContainer = el} >
-            </div>
+            <div className='col' onMouseOver={ () => {this._Update()}} id="chartdiv" ref={el => this.mapContainer = el}></div>
             <div className='col'>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>
           </div>
         </div>
