@@ -29,8 +29,6 @@ class HomePage extends Component {
       <div className="combo-box-div">
         <Helmet>
           <title>HomePage</title>
-          {/* <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-          <script src="https://cdn.amcharts.com/lib/4/charts.js"></script> */}
         </Helmet>
         <h1>TAG Political Finance Tracker</h1>
         <div className='inside'>
@@ -39,8 +37,7 @@ class HomePage extends Component {
             options={this.state.politicians}
             getOptionLabel={(option) => option.name}
             style={{ width: 300 }}
-            renderInput={(params) => <TextField {...params} label="Ex. Trump, Donald" variant="outlined" />}
-          />
+            renderInput={(params) => <TextField {...params} label="Ex. Trump, Donald" variant="outlined" />}/>
         </div>
         <div id="chartdiv">
           <PoliticalMap />
