@@ -1,4 +1,5 @@
 import './App.css';
+import './LocomotiveScroll.css';
 import { BrowserRouter, Route } from "react-router-dom"
 import HomePage from './pages/HomePage.js'
 import PoliticianPage from './pages/PoliticianPage.js'

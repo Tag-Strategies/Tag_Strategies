@@ -16,11 +16,13 @@
   background-color: rgb(119, 3, 3);
 }
 
+.scrollPart {
+  height: 800px;
+}
+
 #chartdiv {
   width: 100%;
   height: 500px;
-  background-color: rgb(2, 2, 2);
-  
 }
 
 .combo-box-div {

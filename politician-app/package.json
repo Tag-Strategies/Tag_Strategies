@@ -13,6 +13,7 @@
     "@types/core-js": "^2.5.4",
     "bootstrap": "^4.5.3",
     "core-js": "^3.8.1",
+    "locomotive-scroll": "^4.0.6",
     "mapbox-gl": "^2.0.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",

@@ -9,7 +9,9 @@ class Map extends Component {
     this.state = {
     lng: -98,
     lat: 39,
-    zoom: 2.75
+    zoom: 2.75,
+    pitch: 0,
+    bearing: 0,
     };
   }
 
@@ -19,19 +21,25 @@ class Map extends Component {
     container: this.mapContainer,
     style: 'mapbox://styles/frstylskier/ckii5rg401dyh1ao2ynen1o35',
     center: [this.state.lng, this.state.lat],
-    zoom: this.state.zoom
+    zoom: this.state.zoom,
+    pitch: this.state.pitch,
+    bearing: this.state.bearing,
     });
+    this._Load()
   }
 
-  _Update() {
-    console.log("this.map")
+  _Load() {
+    console.log('ran')
     this.map.on('move', () => {
       this.setState({
       lng: this.map.getCenter().lng.toFixed(4),
       lat: this.map.getCenter().lat.toFixed(4),
-      zoom: this.map.getZoom().toFixed(2)
+      zoom: this.map.getZoom().toFixed(2),
+      pitch: this.map.getPitch().toFixed(2),
+      bearing: this.map.getBearing().toFixed(2),
       });
     });
+    
   }
 
   render() {
@@ -43,8 +51,8 @@ class Map extends Component {
         <div className='container'>
           <h1>TAG Political Finance Map</h1>
           <div className='row'>
-            <div className='col' onMouseOver={ () => {this._Update()}} id="chartdiv" ref={el => this.mapContainer = el}></div>
-            <div className='col'>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>
+            <div className='col' id="chartdiv" ref={el => this.mapContainer = el}></div>
+            <div className='col'>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom} | Pitch: {this.state.pitch} | Bearing: {this.state.bearing}</div>
           </div>
         </div>
       </div>
