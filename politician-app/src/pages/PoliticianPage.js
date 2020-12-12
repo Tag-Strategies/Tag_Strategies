@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import '../App.css';
+import '../style/App.css';
 import { Helmet } from "react-helmet";
 import mapboxgl from 'mapbox-gl';
-class Map extends Component {
 
+class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {

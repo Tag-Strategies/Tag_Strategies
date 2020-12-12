@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import politicianApi from '../../api/politicianApi.js'
+import fetchPoliticians from '../../api/politicianApi.js'
+
 
 class ComboBox extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class ComboBox extends Component {
  
 
   componentDidMount() {
-    politicianApi.fetchPoliticians()
+    fetchPoliticians()
     .then(nameList => {
         this.setState({
           politicians: nameList
