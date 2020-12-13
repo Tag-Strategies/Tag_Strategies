@@ -8,6 +8,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import Switch from '../components/Switch'
 import Accordion from '../components/Accordian.js'
 import PoliticianList from '../components/PoliticianList'
+import Header from '../components/Header'
 
 
 
@@ -29,7 +30,7 @@ class HomePage extends Component {
         <Helmet>
           <title>HomePage</title>
         </Helmet>
-        <h1 >TAG Political Finance Tracker</h1>
+        <Header />
         <ComboBox />
         <div id="chartdiv">
           <PoliticalMap />

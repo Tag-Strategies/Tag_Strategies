@@ -1,5 +1,6 @@
 import './style/App.css';
 import './style/LocomotiveScroll.css';
+import './style/Header.css';
 import { BrowserRouter, Route } from "react-router-dom"
 import HomePage from './pages/HomePage.js'
 import PoliticianPage from './pages/PoliticianPage.js'
