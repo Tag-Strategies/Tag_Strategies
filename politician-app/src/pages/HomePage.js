@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import '../style/App.css';
 import '../style/LocomotiveScroll.css';
 import { Helmet } from "react-helmet";
-import { PoliticalMap } from '../components/PoliticianList/PoliticalMap.js'
-import ComboBox from '../components/PoliticianList/ComboBox.js'
+import { PoliticalMap } from '../components/PoliticalMap.js'
+import ComboBox from '../components/ComboBox.js'
 import LocomotiveScroll from 'locomotive-scroll';
-import Switch from '../components/PoliticianList/Switch'
+import Switch from '../components/Switch'
+import Accordion from '../components/Accordian.js'
+import PoliticianList from '../components/PoliticianList'
 
 
 
@@ -42,7 +44,10 @@ class HomePage extends Component {
                 <h2 data-scroll data-scroll-speed="1">What's up?</h2>
                 <p data-scroll data-scroll-speed="2">😬</p>
             </div>
-            <Switch />
+            <Accordion />
+              <Switch />
+              <Switch />
+              <PoliticianList />
           </div>
         </div>
       </div>

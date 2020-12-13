@@ -1,5 +1,5 @@
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table'
-import '../../api/politicianApi.js'
+import fetchPoliticians from '../api/politicianApi.js'
 
 function PoliticianList(props){
   return (
