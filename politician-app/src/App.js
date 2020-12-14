@@ -1,22 +1,14 @@
-import './style/App.css';
-import './style/LocomotiveScroll.css';
-import './style/Header.css';
+
 import { BrowserRouter, Route } from "react-router-dom"
-import HomePage from './pages/HomePage.js'
+import ComponentTestPage from './pages/ComponentTestPage.js'
 import PoliticianPage from './pages/PoliticianPage.js'
-import * as am4core from "@amcharts/amcharts4/core";
-import am4themes_animated from "@amcharts/amcharts4/themes/animated";
-am4core.useTheme(am4themes_animated);
-
-
-
-
+import './style/App.css'
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Route exact path='/' component={HomePage}></Route>
+        <Route exact path='/' component={ComponentTestPage}></Route>
         <Route exact path='/politician' component={PoliticianPage}></Route>
       </BrowserRouter>
     </div>

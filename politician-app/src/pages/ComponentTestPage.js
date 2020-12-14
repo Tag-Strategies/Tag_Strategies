@@ -9,10 +9,12 @@ import Switch from '../components/Switch'
 import Accordion from '../components/Accordian.js'
 import PoliticianList from '../components/PoliticianList'
 import Header from '../components/Header'
+import Test from '../components/Test'
+import TableDisplayContainer from '../components/TableDisplayContainer'
 
 
 
-class HomePage extends Component {
+class ComponentTestPage extends Component {
 
   componentDidMount() {
     const scroll = new LocomotiveScroll({
@@ -28,7 +30,7 @@ class HomePage extends Component {
     return (
       <div className="combo-box-div">
         <Helmet>
-          <title>HomePage</title>
+          <title>Component Test Page</title>
         </Helmet>
         <Header />
         <ComboBox />
@@ -50,10 +52,12 @@ class HomePage extends Component {
               <Switch />
               <PoliticianList />
           </div>
+          <Test />
+          <TableDisplayContainer />
         </div>
       </div>
     )
   }
 }
 
-export default HomePage
+export default ComponentTestPage

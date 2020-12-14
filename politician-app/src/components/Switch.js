@@ -16,10 +16,10 @@ export default class Switch extends React.Component {
     // Because `this.handleClick` is bound, we can use it as an event handler.
     return (
       <div>
+        <form>
         <button onClick={this.handleClick}>
           Say hello
         </button>
-        <form>
         <div class='form-field'>
           <label>Checkbox</label>
           <div class="field-inner">
@@ -34,12 +34,12 @@ export default class Switch extends React.Component {
           <label>Radio</label>
           <div class="field-inner">
             <div class='switch'>
-              <input type="radio" name='radio' id='yes' />
+              <input type="radio" name='radio' id='yes1' />
               <span class='checked'></span>
               <label for="yes">Yup!</label>
             </div>
             <div class='switch'>
-              <input type="radio" name='radio' id='no'></input>
+              <input type="radio" name='radio' id='no1'></input>
               <span class='checked'></span>
               <label for="no">Nope!</label>
             </div>
