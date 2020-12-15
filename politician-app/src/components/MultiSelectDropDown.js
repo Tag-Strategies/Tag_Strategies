@@ -44,20 +44,24 @@ export default class MultiSelectDropDown extends React.Component {
 
   render() {
     return (
-      <div className='row'> 
-        <div className='col-8'>
+      <div className='row no-gutters search-container'> 
+        <div className='col-9'>
           <Multiselect
             options={this.state.politicians} // Options to display in the dropdown
             selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
             ref={this.multiselectRef}
+            size={1}
+            placeholder={'Type candidate name here'}
             onSelect={this.onSelect} // Function will trigger on select event
-            onRemove={this.onRemove} // Function will trigger on remove event
+            onRemove={this.onRemove}
+            loadingMessage={'Accessing Database'} // Function will trigger on remove event
             displayValue="name">
           </Multiselect>
         </div>
-        <div className='col-4'>
-          <Button id='get-started' onClick={this.getValues} variant="secondary" size="lg">
-            Get Started
+        <div className='col searchbar-spacer'></div>
+        <div className='col-2 button-container'>
+          <Button id='get-started' onClick={this.getValues} variant="primary">
+            <h1 id='get-started-text'>GET STARTED</h1>
           </Button>
         </div>
       </div>

@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "multiselect-react-dropdown": "^1.6.2",
+    "react-hamburger-menu": "^1.2.1",
     "react-image": "^4.0.3",
     "react-images": "^1.1.7"
   }

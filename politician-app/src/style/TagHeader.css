@@ -1,0 +1,65 @@
+.site-header { 
+  border: 0px solid black;
+  background-color: transparent;
+  width: 100%;
+  top: 10px;
+  position: absolute;
+  
+}
+
+.site-header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.site-identity {
+  float: left;
+}
+
+.site-identity h1 {
+  font-size: 1.5em;
+  margin: .7em 0 .3em 0;
+  display: inline-block;
+}
+
+.site-identity img {
+  max-width: 155px;
+  float: left;
+  margin: 10px 10px 10px 50px;
+}
+
+.site-navigation {
+  float: right;
+}
+
+.site-navigation ul, li {
+
+}
+
+.optionContainer{
+  background-color: pink;
+}
+
+.site-navigation li {
+  display: inline-block;
+  margin: 1.4em 1em 1em 1em;
+}
+
+
+#dropdown-basic-button{
+  margin-right: 40px;
+  background-color: red;
+  border: none;
+  margin-top: 25px;
+}
+
+.logo-text{
+  margin-left: 50px;
+  margin-bottom: 0;
+  color: white;
+}
+
+.logo{
+  background-color: transparent;
+}

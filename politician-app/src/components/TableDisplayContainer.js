@@ -24,7 +24,7 @@ class SelectionBox extends React.Component {
 class TableDisplay extends React.Component {
   render() {
     // Do your filtering with this value
-    const {selectValue} = this.props;
+  
 
     return (
       <div className="wrapper">

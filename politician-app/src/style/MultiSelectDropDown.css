@@ -1,21 +1,66 @@
 .searchBox {
-  
+  border: 2px dotted black;
 }
 
 .chip{
   background-color: grey;
+  
 }
 
 #multiselectContainerReact{
   background: white;
-  border-radius: 15px;
+  border-radius: 10px;
   border: none;
+  height: 100%;
+
 }
 
 ._2iA8p44d0WZ-WqRBGcAuEV {
   border: none;
 }
 
+.optionContainer{
+  height: 80px;
+}
+
+.optionListContainer{
+}
+
 #get-started{
   background-color: red;
+  border-radius: 10px;
+  width: 100%;
+  height: 40px;
+  border: none;
+}
+
+.button-container{
+  margin-left: 0px;
+  padding-left: 50px;
+}
+
+#get-started-text{
+  color: white;
+  font-family: acumin-pro-condensed, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  font-style: normal;
+  padding: 0px;
+}
+
+.search-container{
+  width: 100%;
+  
+  padding-left: 50px;
+  padding-right: 50px;
+  /* max-width: 1300px; */
+}
+
+.searchbar-spacer{
+  max-width: 50px;
+  min-width: 50px;
+}
+
+#search_input{
+  width: 100%;
 }

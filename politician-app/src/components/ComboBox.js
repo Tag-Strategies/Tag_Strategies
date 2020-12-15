@@ -23,7 +23,7 @@ class ComboBox extends Component {
   
   render() {
     return (
-      <div>
+      <div className='col'>
         <h1 id='title'>CAMPAIGN CASH MAP</h1>
         <Autocomplete
           multiple

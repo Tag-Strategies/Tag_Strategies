@@ -1,3 +1,30 @@
-*{
+/* .col{
+  border: 5px dotted blue;
+}
+.row{
+  border: 5px dotted red;
+}
+.container-fluid{
+  border: 5px dotted yellow;
+} */
 
+body {
+  height: 100%;
+  color: blue;
+  background-color: greenyellow;
+  
+}
+
+html{
+  background-color: rgb(0, 0, 0);
+}
+
+.container-fluid{
+  background-color: rgb(0, 0, 0);
+  min-width: 900px;
+  max-width: 1300px;
+}
+
+.App{
+  background-color: black;
 }

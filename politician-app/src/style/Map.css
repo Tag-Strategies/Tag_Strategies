@@ -1,12 +1,14 @@
-#mapcoordinates{
+.mapcoordinates{
   background-color: cyan;
-  max-width: 100px;
-}
-
-#chartdiv{
-  height: 100%;
 }
 
 .map-container{
-  height: 490px;
+  height: 600px;
+  padding-right:-15;
+  padding-left:-15;
+  
+}
+
+.coordinate-box{
+  background-color: black;
 }

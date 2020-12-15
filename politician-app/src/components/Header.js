@@ -13,7 +13,7 @@ import '../style/Header.css'
 class Header extends Component {
     render() {
         return (
-            <Navbar sticky='top' bg="dark" expand="sm">
+            <Navbar  className='col' sticky='top' bg="dark" expand="sm">
                 <Navbar.Brand href="#home">TAG Finance Tracker</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
