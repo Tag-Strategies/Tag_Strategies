@@ -1,3 +1,35 @@
-Header {
 
+/* .row{
+  border:1px dotted yellowgreen;
+  
+}
+
+.container-fluid{
+  border:1px dotted rgb(250, 2, 209);
+
+}
+
+.col{
+  border: 1px dotted black;
+  
+} */
+
+#spacer{
+  background-color: red;
+  height: 50px;
+  /* margin: 0;
+  padding: 0; */
+  /* color: transparent; */
+}
+
+.politician-page{
+  /* width: 100%; */
+}
+
+.no-margin{
+  margin: 0;
+}
+
+.no-padding{
+  padding: 0;
 }

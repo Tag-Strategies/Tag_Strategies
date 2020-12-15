@@ -1,13 +1,12 @@
 #mapcoordinates{
   background-color: cyan;
-  width: 100vw;
+  max-width: 100px;
 }
 
 #chartdiv{
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
 
-.mapboxgl-canvas{
-
+.map-container{
+  height: 490px;
 }

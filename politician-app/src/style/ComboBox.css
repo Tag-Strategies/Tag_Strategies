@@ -1,0 +1,23 @@
+
+.combo-col{
+  /* height: 7vh; */
+  /* position: relative; */
+  /* margin: 0 auto;
+  display: block; */
+}
+
+#combo-textfield{
+  background-color: greenyellow;
+}
+
+.MuiSelect-root{
+  background-color: red;
+}
+
+#title{
+  margin-top: -25%;
+  margin-bottom: 25%;
+  text-align: center;
+  color: red;
+  font-family: 'Open Sans';
+}

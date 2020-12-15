@@ -3,17 +3,33 @@ import '../style/PoliticianPage.css'
 // import { Helmet } from "react-helmet";
 import Map from '../components/Map'
 import Header from '../components/Header'
+import CapitolPvg from '../components/CapitolPng'
+import MultiSelectDropDown from '../components/MultiSelectDropDown'
 
 class PoliticianPage extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <Header />
-        <div className="container">
-          <Map />
+      <div className='container-fluid'>
+        <div className='row no-gutters'>
+          <div className='col no-gutters'>
+            <div>
+              <Header />
+              <CapitolPvg />
+            </div>
+          </div>
         </div>
-      </React.Fragment>
+        <div>
+          <div id='spacer' className='no-padding no-margin'></div>
+        </div>
+        <div className='row no-gutters'>
+          <div className='col no-gutters'>
+            <div>
+              <Map />
+            </div>
+          </div>
+        </div>
+      </div>
     )
   }
 }

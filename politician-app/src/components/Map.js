@@ -44,10 +44,14 @@ class Map extends Component {
 
   render() {
     return (
-      <div className='row'>
-        <div className='row' id="chartdiv" ref={el => this.mapContainer = el}>
+      <div className='col'>
+        <div className='row map-container'>
+          <div className='col' id="chartdiv" ref={el => this.mapContainer = el}>
+          </div>
         </div>
-        <div className='row' id='mapcoordinates' >Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom} | Pitch: {this.state.pitch} | Bearing: {this.state.bearing}
+        <div className='row'>
+          <div className='col' id='mapcoordinates' >Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom} | Pitch: {this.state.pitch} | Bearing: {this.state.bearing}
+          </div>
         </div>
       </div>
     )
