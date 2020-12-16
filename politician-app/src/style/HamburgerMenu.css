@@ -1,10 +1,14 @@
-.Hamburger{
-  margin-right: 50px;
-  margin-top: 30px;
-  /* background-color: rgba(255, 255, 255, 0.466); */
+
+div.Hamburger > ul.hamburgerDropDown{
+  background-color: rgba(255, 255, 255, 0.582);
+  border-radius: 50px;
+  padding: 0px;
+  font-family: acumin-pro-condensed, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
 }
 
-.hamburgerDropDown, .nav{
-  background-color: white;
-  border-radius: 20px;
-}
+/* .nav-link{
+  height: 100%;
+} */

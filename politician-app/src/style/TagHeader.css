@@ -14,7 +14,10 @@
 }
 
 .site-identity {
-  float: left;
+  float: right;
+  margin: 10px 50px 10px 0px;
+  background-color: rgba(133, 133, 133, 0.548);
+  border-radius: 10px;
 }
 
 .site-identity h1 {
@@ -24,21 +27,14 @@
 }
 
 .site-identity img {
-  max-width: 155px;
+  max-width: 140px;
   float: left;
-  margin: 10px 10px 10px 50px;
+  margin: 5px 0px 5px 5px;
 }
 
 .site-navigation {
-  float: right;
-}
-
-.site-navigation ul, li {
-
-}
-
-.optionContainer{
-  background-color: pink;
+  float: left;
+  margin: 20px 10px 10px 50px;
 }
 
 .site-navigation li {
@@ -56,10 +52,13 @@
 
 .logo-text{
   margin-left: 50px;
-  margin-bottom: 0;
-  color: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 5px;
+  color: rgba(255, 255, 255, 0.411);
 }
 
 .logo{
   background-color: transparent;
+  display: block;
 }

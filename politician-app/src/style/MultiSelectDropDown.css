@@ -1,10 +1,14 @@
 .searchBox {
   border: 2px dotted black;
+  color: white;
+  font-family: acumin-pro-condensed, sans-serif;
+  font-size: px;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .chip{
   background-color: grey;
-  
 }
 
 #multiselectContainerReact{
@@ -12,18 +16,19 @@
   border-radius: 10px;
   border: none;
   height: 100%;
-
 }
 
 ._2iA8p44d0WZ-WqRBGcAuEV {
   border: none;
 }
 
-.optionContainer{
-  height: 80px;
+.optionListContainer{
+  background-color: rgba(128, 128, 128, 0.678);
+  padding-top: 5px;
 }
 
-.optionListContainer{
+.get-started-wrapper{
+  height: 100%;
 }
 
 #get-started{
@@ -32,28 +37,29 @@
   width: 100%;
   height: 40px;
   border: none;
-}
-
-.button-container{
-  margin-left: 0px;
-  padding-left: 50px;
+  white-space: nowrap;
+  padding: 0px;
 }
 
 #get-started-text{
   color: white;
   font-family: acumin-pro-condensed, sans-serif;
-  font-size: 25px;
+  font-size: px;
   font-weight: 700;
   font-style: normal;
-  padding: 0px;
+  padding: 0px 0px 0px 0px;
 }
 
 .search-container{
   width: 100%;
-  
   padding-left: 50px;
-  padding-right: 50px;
-  /* max-width: 1300px; */
+  padding-right: 30px;
+  border-radius: 10px;
+}
+
+.optionContainer{
+  background-color: rgba(43, 40, 40, 0.048);
+  height: 50px;
 }
 
 .searchbar-spacer{
@@ -61,6 +67,15 @@
   min-width: 50px;
 }
 
+#search_input::placeholder{
+  color: rgba(0, 0, 0, 0.308);
+}
+
 #search_input{
   width: 100%;
+  color: black;
+  font-family: acumin-pro-condensed, sans-serif;
+  font-size: px;
+  font-weight: 500;
+  font-style: normal;
 }

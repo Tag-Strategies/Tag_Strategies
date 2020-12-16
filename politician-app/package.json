@@ -20,6 +20,7 @@
     "mapbox-gl": "^2.0.0",
     "node-sass": "4.14.1",
     "react": "^17.0.1",
+    "react-awesome-mega-menu": "^1.0.3",
     "react-bootstrap": "^1.4.0",
     "react-bootstrap-table": "^4.3.1",
     "react-dom": "^17.0.1",

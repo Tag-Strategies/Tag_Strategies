@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../style/PoliticianPage.css'
 import Map from '../components/Map'
 import CapitolPvg from '../components/CapitolPng'
-import TagHeader from '../components/TagHeader'
+
 
 class PoliticianPage extends Component {
 

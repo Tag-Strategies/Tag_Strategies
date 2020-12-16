@@ -14,6 +14,12 @@ class Hamburger extends Component {
 
     handleClick = () => {
         this.setState({open: !this.state.open});
+        if (!this.state.open){
+            console.log('clicked burger')
+        }
+        if (this.state.open){          
+            console.log('unclicked burger')
+        }
     }
 
     displayHamburgerMenu = () => {
@@ -26,8 +32,9 @@ class Hamburger extends Component {
                     strokeWidth={4}
                     rotate={0}
                     color='white'
-                    borderRadius={0}
+                    borderRadius={20}
                     animationDuration={0.5}
+                    className="burger-menu"
                 />
         )
     }
@@ -35,7 +42,8 @@ class Hamburger extends Component {
     displayHamburger = () => {
         return (
             <ul className='nav'>
-                    <li className='nav-link'><NavLink to='/' >Home</NavLink></li>
+                    <li className='nav-link'><NavLink to='politician' >Home</NavLink></li>
+                    <li className='nav-link'><NavLink to='/' >Test Page</NavLink></li>
                 </ul>
         )
     }
@@ -43,8 +51,8 @@ class Hamburger extends Component {
     displayMobileMenu = () => {
         return (
             <ul className='hamburgerDropDown'>
-                    <li className='nav-link'><NavLink to='/' >Home</NavLink></li>
-                 
+                    <li className='nav-link'><NavLink to='politician' >Home</NavLink></li>
+                    <li className='nav-link'><NavLink to='/' >Test Page</NavLink></li>
                 </ul>
         )
     }
@@ -53,7 +61,7 @@ class Hamburger extends Component {
         return (
             <div className='Hamburger'>
                 { this.state.open ?  this.displayMobileMenu() : null}
-                {window.innerWidth > 1200 ? this.displayHamburger() : this.displayHamburgerMenu()}
+                {window.innerWidth > 100000 ? this.displayHamburger() : this.displayHamburgerMenu()}
             </div>
         );
     }
