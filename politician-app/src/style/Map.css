@@ -1,14 +1,11 @@
-.mapcoordinates{
-  background-color: cyan;
-}
 
 .map-container{
   height: 600px;
   padding-right:-15;
   padding-left:-15;
-  
 }
 
 .coordinate-box{
   background-color: black;
+  visibility: hidden;
 }

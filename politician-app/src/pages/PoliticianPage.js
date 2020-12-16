@@ -25,7 +25,7 @@ class PoliticianPage extends Component {
         <div className="row data-carousel-container">
           <div className="col">
             <div className="row data-carousel">
-              <DataCarousel />
+              <DataCarousel x={3} />
             </div>
           </div>
         </div>

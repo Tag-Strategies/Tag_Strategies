@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactCardCarousel from 'react-card-carousel';
 import { Doughnut } from 'react-chartjs-2';
+import MultiAxisLineChart from '../components/MultiAxisLineChart'
 
 const data = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -30,6 +31,10 @@ const data = {
 }
 
 class DataCarousel extends Component {
+  constructor (props) {
+    super(props);
+  
+  }
 
   static get CARD_STYLE() {
     return {
@@ -37,12 +42,11 @@ class DataCarousel extends Component {
       width: '600px',
       paddingTop: '40px',
       textAlign: 'center',
-      background: 'red',
+      background: 'darkred',
       color: '#FFF',
       fontSize: '12px',
       textTransform: 'uppercase',
       borderRadius: '10px',
-      // transform: "translateY(-200px)"
     };
   }
 
@@ -55,16 +59,16 @@ class DataCarousel extends Component {
           <Doughnut data={data} />
         </div>
         <div className='col' style={ DataCarousel.CARD_STYLE }>
-          Second Card
+          <MultiAxisLineChart />
         </div>
         <div className='col' style={ DataCarousel.CARD_STYLE }>
-          Third Card
+          <MultiAxisLineChart />
         </div>
         <div className='col' style={ DataCarousel.CARD_STYLE }>
-          Fourth Card
+          {this.props.x}
         </div>
         <div className='col' style={ DataCarousel.CARD_STYLE }>
-          Fifth Card
+          <MultiAxisLineChart />
         </div>
       </ReactCardCarousel>
     );
