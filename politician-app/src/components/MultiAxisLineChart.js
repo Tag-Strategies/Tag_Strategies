@@ -46,14 +46,13 @@ const options = {
 }
 
 const MultiAxisLine = () => (
-  <>
+  <div>
     <div className='header'>
-      <h1 className='title'></h1>
       <div className='links'>
       </div>
     </div>
     <Line data={data} options={options} />
-  </>
+  </div>
 )
 
 export default MultiAxisLine

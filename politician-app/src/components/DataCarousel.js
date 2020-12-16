@@ -31,10 +31,7 @@ const data = {
 }
 
 class DataCarousel extends Component {
-  constructor (props) {
-    super(props);
-  
-  }
+
 
   static get CARD_STYLE() {
     return {
