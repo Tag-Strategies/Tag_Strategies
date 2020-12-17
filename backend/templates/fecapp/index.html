@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
 
+
 {% block  body%}
   <div>
     <h1>List of politicians in the database.</h1>
   </div>
 
-  {% for politician in nameList %}
+  {% for politician in PoliticianList %}
     <div>
-      <p><a href="#" style="font-size:9pt">{{politician}}</a></p>
+      <div class="card">
+        <div>
+          Name: <a href="#" >{{politician.name}}</a>
+        </div>
+        {% if politician.party == 'DEM' %}
+        <div class='democrat' >Party: {{politician.party}}</div>
+        {% elif politician.party == 'REP' %}
+        <div class='republican' >Party: {{politician.party}}</div>
+        {% else %}
+        <div class='other' >Party: {{politician.party}}</div>
+        {% endif %}
+      </div>
     </div>
   {% endfor %}
 {% endblock  %}

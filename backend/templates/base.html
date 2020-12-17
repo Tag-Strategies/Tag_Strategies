@@ -1,3 +1,4 @@
+{% load staticfiles %}
 {% load render_bundle from webpack_loader %}
 
 <!DOCTYPE html>
@@ -8,26 +9,26 @@
   <title>{% block title %}{% endblock %}</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <link rel="shortcut icon" href="#" />
-
-  <!-- Webpack rendered CSS -->
-  {% render_bundle 'main' 'css' %}
+  <link rel="stylesheet"  href="{%  static  'css/main.css'  %}">
 </head>
 <header>
   <p>This is a backend admin page.</p>
 </header>
 <body>
+
   {% include 'includes/sentry_init.html' %}
 
   <!-- Body Content -->
   {% block body %}{% endblock %}
 
   <!-- django-js-reverse -->
-  <script src="{% url 'js_reverse' %}" type="text/javascript"></script>
+  {% comment %} <script src="{% url 'js_reverse' %}" type="text/javascript"></script> {% endcomment %}
 
   <!-- Webpack rendered Javascript -->
   {% render_bundle 'vendors~main' 'js' 'DEFAULT' %} {% render_bundle 'main' 'js' 'DEFAULT' %}
+    <!-- Webpack rendered CSS -->
+  {% render_bundle 'main' 'css' %}
   {% block scripts %}{% endblock %}
 </body>
 </html>

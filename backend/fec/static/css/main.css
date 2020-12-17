@@ -1,0 +1,20 @@
+body {
+  color: rgb(223, 200, 200);
+  background-color: rgb(19, 16, 16);
+}
+
+.democrat{
+  color: blue;
+}
+
+.republican{
+  color: red;
+}
+
+.other{
+  color: rgb(30, 255, 0);
+}
+
+.card {
+  padding: 10px;
+}

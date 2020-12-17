@@ -1,4 +1,5 @@
 import requests
+import json
 from django.shortcuts import render
 from .models import Politician
 from django.core.exceptions import ObjectDoesNotExist
@@ -51,23 +52,23 @@ def get_total_page_numbers():
 
 def get_names(request):
     Politician.objects.delete_everything()
-    all_names = {}
-    for i in range(1, get_total_page_numbers()): 
+    all_list_of_politicians = {}
+    for i in range(1,2): #get_total_page_numbers()): 
         response = requests.get(f"https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page={i}&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
         data = response.json()
-        names = data['results']
-        for i in range(len(names)):
+        list_of_politicians = data['results']
+        for i in range(len(list_of_politicians)):
+            json_formatted_str = json.dumps(data['results'][i]['party'], indent=2)
+            print(json_formatted_str)
             try: 
-                Politician.objects.get(name = names[i]['name'])
+                Politician.objects.get(name = list_of_politicians[i]['name'])
                 pass
             except ObjectDoesNotExist:
-                name_data = Politician(name = names[i]['name'])
-                name_data.save()
-        all_names = Politician.objects.all()
-        print(all_names)
+                Politician(name = list_of_politicians[i]['name'], party = list_of_politicians[i]['party']).save()
+  
 
-    return render (request, 'fecapp/index.html', { "nameList": 
-    all_names} )
+    return render (request, 'fecapp/index.html', { "PoliticianList": 
+    Politician.objects.all()} )
 
 
 
