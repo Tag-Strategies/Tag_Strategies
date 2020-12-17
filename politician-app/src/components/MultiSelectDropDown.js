@@ -26,30 +26,21 @@ export default class MultiSelectDropDown extends React.Component {
         })
       }
     )
-    console.log("Name list updated.")
-  }
+  };
 
   onSelect(selectedList, selectedItem) {
     this.setState({
       selectedPoliticians: selectedList
     })
-    console.log(this.state.selectedPoliticians)
-  }
+  };
  
   onRemove(selectedList, removedItem) {
     this.setState({selectedPoliticians: selectedList})
-    // var _ = require('lodash');
-    // console.log(removedItem["name"])
-    // var evens = _.remove(this.state.selectedPoliticians, function(n) { return n.name == removedItem["name"];})
-    // console.log(evens)
-    // this.setState({
-    //   selectedPoliticians: this.state.selectedPoliticians.concat(selectedItem)
-    // })
-  }
+  };
 
   getValues(e) {
     console.log(this.state.selectedPoliticians)
-  }
+  };
 
   updateOptions(e){
     if (e.length >= 3){
@@ -60,8 +51,7 @@ export default class MultiSelectDropDown extends React.Component {
           })
         }
       )
-      console.log("Name list updated.")
-    }
+    };
   }
 
   resetValues() {
