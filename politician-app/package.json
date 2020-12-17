@@ -20,6 +20,7 @@
     "isotope-layout": "^3.0.6",
     "locomotive-scroll": "^4.0.6",
     "mapbox-gl": "^2.0.0",
+    "multiselect-react-dropdown": "^1.6.2",
     "node-sass": "4.14.1",
     "react": "^17.0.1",
     "react-awesome-mega-menu": "^1.0.3",

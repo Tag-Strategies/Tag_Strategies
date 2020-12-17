@@ -52,6 +52,9 @@ export default class MultiSelectDropDown extends React.Component {
         }
       )
     };
+    for (let i = 0; i < this.state.politicians.length; i++){
+      console.log(i, this.state.politicians[i]["name"], this.state.politicians[i]["party"])
+    }
   }
 
   resetValues() {
@@ -73,7 +76,7 @@ export default class MultiSelectDropDown extends React.Component {
             onSelect={this.onSelect} // Function will trigger on select event
             onRemove={this.onRemove}
             loadingMessage={'Accessing Database'} // Function will trigger on remove event
-            displayValue="name">
+            displayValue={"name"}>
           </Multiselect>
         </div>
         <div className='searchbar-spacer'></div>

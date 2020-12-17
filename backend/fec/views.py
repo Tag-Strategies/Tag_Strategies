@@ -15,6 +15,7 @@ def politicians_list(request):
     if request.method == 'GET':
         data = Politician.objects.filter(name__icontains=f"{filter}")
         serializer = PoliticianSerializer(data, context={'request': request}, many=True)
+        print(serializer.data)
         return Response(serializer.data)
     elif request.method == 'POST':
         serializer = PoliticianSerializer(data=request.data)
@@ -52,7 +53,6 @@ def get_total_page_numbers():
 
 def get_names(request):
     Politician.objects.delete_everything()
-    all_list_of_politicians = {}
     for i in range(1,2): #get_total_page_numbers()): 
         response = requests.get(f"https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page={i}&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
         data = response.json()
