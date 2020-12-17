@@ -13,11 +13,13 @@
           Name: <a href="#" >{{politician.name}}</a>
         </div>
         {% if politician.party == 'DEM' %}
-        <div class='democrat' >Party: {{politician.party}}</div>
+        <div>Party:<a class='democrat' > {{politician.party}}</a></div>
         {% elif politician.party == 'REP' %}
-        <div class='republican' >Party: {{politician.party}}</div>
+        <div>Party:<a class='republican' > {{politician.party}}</a></div>
+        {% elif politician.party == 'LIB' %}
+        <div>Party:<a class='libertarian' > {{politician.party}}</a></div>
         {% else %}
-        <div class='other' >Party: {{politician.party}}</div>
+        <div>Party:<a class='other' > {{politician.party}}</a></div>
         {% endif %}
       </div>
     </div>

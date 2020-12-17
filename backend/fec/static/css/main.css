@@ -11,8 +11,12 @@ body {
   color: red;
 }
 
+.libertarian{
+  color: green;
+}
+
 .other{
-  color: rgb(30, 255, 0);
+  color: rgb(230, 236, 229);
 }
 
 .card {
