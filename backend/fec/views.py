@@ -9,8 +9,10 @@ from .serializer import *
 
 @api_view(['GET', 'POST'])
 def politicians_list(request):
+    filter = request.GET['filter']
+    print(filter)
     if request.method == 'GET':
-        data = Politician.objects.all()[::1]
+        data = Politician.objects.filter(name__icontains=f"{filter}")
         serializer = PoliticianSerializer(data, context={'request': request}, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
