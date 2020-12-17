@@ -50,7 +50,7 @@ def get_total_page_numbers():
 def get_names(request):
     Politician.objects.delete_everything()
     all_names = {}
-    for i in range(1, 10):#get_total_page_numbers()): 
+    for i in range(1, get_total_page_numbers()): 
         response = requests.get(f"https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page={i}&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
         data = response.json()
         names = data['results']

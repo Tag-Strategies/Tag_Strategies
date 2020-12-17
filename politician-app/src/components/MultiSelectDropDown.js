@@ -21,6 +21,7 @@ export default class MultiSelectDropDown extends React.Component {
         })
       }
     )
+    console.log("Name list updated.")
   }
 
   onSelect(selectedList, selectedItem) {
