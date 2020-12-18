@@ -15,7 +15,7 @@ class PoliticianManager(models.Manager):
             cursor.execute(sql)
 class Politician(models.Model):
     name = models.CharField(max_length=200, default="XXXXX XXXXXX")
-    party = models.CharField(max_length=5, default="none")
+    party = models.CharField(max_length=5, default="none", null=True)
     objects = PoliticianManager()
 
     def delete_everything(self):
