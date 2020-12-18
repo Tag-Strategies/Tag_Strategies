@@ -3,6 +3,15 @@
   position: relative;
 }
 
+.image-wrapper{
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
+.svg-wrapper{
+  width: 1300px;
+}
+
 #combo-box{
   position: absolute;
   top: 75%;

@@ -3,9 +3,27 @@
   height: 600px;
   padding-right:-15;
   padding-left:-15;
+  background-color: #121212;
+  border-radius: 25px;
 }
 
 .coordinate-box{
-  background-color: black;
+  background-color: red;
+  visibility: hidden;
+}
+
+.map-div{
+  background-color: #121212;
+  border: 3px solid white;
+  margin-top: 10px;
+}
+
+.mapboxgl-ctrl-attrib-button{
+  background-color: #121212;
+  color: #121212;
+  border-radius: 1px;
+}
+
+.mapboxgl-ctrl-logo{
   visibility: hidden;
 }

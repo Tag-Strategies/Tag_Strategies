@@ -43,8 +43,6 @@ def politicians_detail(request, pk):
         politician.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
-
 def get_total_page_numbers():
     response = requests.get("https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page=1&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
     data = response.json()

@@ -13,17 +13,17 @@ body {
 }
 
 html{
-  background-color: rgb(0, 0, 0);
+  background-color: #121212;
 }
 
 .container-fluid{
-  background-color: rgb(0, 0, 0);
+  background-color: #121212;
   min-width: 900px;
   max-width: 1300px;
 }
 
 .App{
-  background-color: black;
+  background-color: #121212;
 }
 
 

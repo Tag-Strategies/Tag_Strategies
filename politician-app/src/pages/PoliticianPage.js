@@ -3,6 +3,7 @@ import '../style/PoliticianPage.css'
 import Map from '../components/Map'
 import CapitolPvg from '../components/CapitolPng'
 import DataCarousel from "../components/DataCarousel";
+import ElectionList from '../components/ElectionList'
 
 class PoliticianPage extends Component {
 
@@ -14,9 +15,9 @@ class PoliticianPage extends Component {
             <CapitolPvg />
           </div>
         </div>
-        <div className='row' >
+        {/* <div className='row' >
           <div className='col spacer'></div>
-        </div>
+        </div> */}
         <div className='row'>
           <div className='col map-div'>
             <Map />
@@ -26,6 +27,9 @@ class PoliticianPage extends Component {
           <div className="col">
             <div className="row data-carousel">
               <DataCarousel x={3} />
+            </div>
+            <div className="row">
+              {/* <ElectionList /> */}
             </div>
           </div>
         </div>

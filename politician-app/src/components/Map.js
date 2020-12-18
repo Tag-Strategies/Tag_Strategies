@@ -18,7 +18,7 @@ class Map extends Component {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJzdHlsc2tpZXIiLCJhIjoiY2swd2p5OXZhMGdidDNlcGZzYXI2N3RrdSJ9.MY-V2IlbfRAWSEAIdXmhlA';
     this.map = new mapboxgl.Map({
     container: this.mapContainer,
-    style: 'mapbox://styles/frstylskier/ckii5rg401dyh1ao2ynen1o35',
+    style: 'mapbox://styles/frstylskier/ckiuj2g2j0q8c19qhf02fqe8q',
     center: [this.state.lng, this.state.lat],
     zoom: this.state.zoom,
     pitch: this.state.pitch,

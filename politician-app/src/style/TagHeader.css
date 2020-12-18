@@ -4,7 +4,6 @@
   width: 100%;
   top: 10px;
   position: absolute;
-  
 }
 
 .site-header::after {
@@ -16,7 +15,7 @@
 .site-identity {
   float: right;
   margin: 10px 50px 10px 0px;
-  background-color: rgba(133, 133, 133, 0.548);
+  background-color: rgba(255, 255, 255, 0.603);
   border-radius: 10px;
 }
 
@@ -55,7 +54,7 @@
   margin-top: 0px;
   margin-bottom: 0px;
   margin-right: 5px;
-  color: rgba(255, 255, 255, 0.411);
+  color: rgba(3, 2, 2, 0.699);
 }
 
 .logo{
