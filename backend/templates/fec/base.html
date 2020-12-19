@@ -11,13 +11,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="#" />
   <link rel="stylesheet"  href="{%  static  'css/main.css'  %}">
+  <script src="{%  static  'js/loader.js'  %}"></script>
 </head>
 <header>
   <p>This is a backend admin page.</p>
 </header>
 <body>
+  <div id="progress-wrapper">
+    <button id="progress-bar-trigger">Run</button>
+    <div id="progress-bar" style="background-color: blue; width: 0%;">&nbsp;</div>
+    <div id="progress-bar-message">Waiting for progress to start...</div>
+  </div>
 
-  {% include 'includes/sentry_init.html' %}
+  {% include './sentry_init.html' %}
 
   <!-- Body Content -->
   {% block body %}{% endblock %}
@@ -30,5 +36,6 @@
     <!-- Webpack rendered CSS -->
   {% render_bundle 'main' 'css' %}
   {% block scripts %}{% endblock %}
+
 </body>
 </html>

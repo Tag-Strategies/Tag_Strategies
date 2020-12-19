@@ -12,7 +12,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.utils import timezone
 from django.views import generic
-from .models import Politician
+
 
 @api_view(['GET', 'POST'])
 def politicians_list(request):
@@ -69,18 +69,15 @@ def get_names(request):
                 pass
             except ObjectDoesNotExist:
                 Politician(name = list_of_politicians[i]['name'], party = list_of_politicians[i]['party']).save()
-  
-
-    return render (request, 'fecapp/index.html', { "PoliticianList": 
+    return render (request, './fec/index.html', { "PoliticianList": 
     Politician.objects.all()} )
 
 def view_names(request):
-    
-    return render (request, 'fecapp/index.html', { "PoliticianList": 
+    return render (request, './fec/index.html', { "PoliticianList": 
     Politician.objects.all()} )
 
 class IndexView(generic.ListView):
-    template_name = 'fecapp/index.html'
+    template_name = './fec/index.html'
     context_object_name = 'politician_list'
 
     def get_queryset(self):
@@ -122,11 +119,11 @@ class IndexView(generic.ListView):
 #         print("here")
 #         embed = serializer.save()
 #         #print(embed)
-#         return render(request, 'fecapp/x.html', {'embed': name_database})
+#         return render(request, '../fec/x.html', {'embed': name_database})
 #     else:
 #         form = SubmitEmbed()
 #     print(serializer.errors)
-#     return render(request, 'fecapp/index.html', {'form': name_database})
+#     return render(request, './fec/index.html', {'form': name_database})
 
     #     for i in meals:
     #         meal_data = Meal(
@@ -146,4 +143,4 @@ class IndexView(generic.ListView):
 
 # class PoliticianListView(ListView):
 #     model = Politician
-#     template_name = 'fecapp/index.html'
+#     template_name = './fec/index.html'
