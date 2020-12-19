@@ -37,9 +37,9 @@ clean_examples:
 	# Removing example templates files
 	rm -rf ./backend/templates/exampleapp
 	# Remove exampleapp from settings
-	sed -i '/exampleapp/d' ./backend/Tag_Strategies/settings/base.py
+	sed -i '/exampleapp/d' ./backend/backend/settings/base.py
 	# Remove exampleapp from urls
-	sed -i '/exampleapp/d' ./backend/Tag_Strategies/urls.py
+	sed -i '/exampleapp/d' ./backend/backend/urls.py
 
 compile_install_requirements:
 	@echo 'Installing pip-tools...'

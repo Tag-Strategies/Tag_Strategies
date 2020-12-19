@@ -1,8 +1,8 @@
 {
-  "name": "Tag_Strategies-frontend",
+  "name": "backend-frontend",
   "version": "0.0.1",
   "private": true,
-  "description": "Tag_Strategies frontend.",
+  "description": "backend frontend.",
   "main": "index.js",
   "prettier": "eslint-config-vinta/prettier",
   "scripts": {

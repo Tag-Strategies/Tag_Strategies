@@ -19,7 +19,7 @@
     },
     "DJANGO_SETTINGS_MODULE": {
       "description": "Django settings Python import path",
-      "value": "Tag_Strategies.settings.production"
+      "value": "backend.settings.production"
     },
     "SECRET_KEY": {
       "description": "Django SECRET_KEY setting",
