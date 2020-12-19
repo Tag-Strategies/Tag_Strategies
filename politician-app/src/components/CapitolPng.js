@@ -1,4 +1,4 @@
-import backgroundImage from './method-draw-image.svg'
+import backgroundImage from './images/method-draw-image.svg'
 import React from 'react'
 import '../style/CapitolPng.css'
 import MultiSelectDropDown from '../components/MultiSelectDropDown'

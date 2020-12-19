@@ -1,6 +1,6 @@
 import React from 'react'
 import '../style/TagHeader.css'
-import logo from '../2020_TAG_Horizontal_Color_Positive.png'
+import logo from '../components/images/2020_TAG_Horizontal_Color_Positive.png'
 import Hamburger from '../components/HamburgerMenu'
 
 

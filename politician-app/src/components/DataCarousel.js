@@ -32,6 +32,11 @@ const data = {
 
 class DataCarousel extends Component {
 
+  componentDidMount() {
+    console.log("props should print")
+    console.log(this.props)
+  }
+
 
   static get CARD_STYLE() {
     return {
@@ -52,7 +57,7 @@ class DataCarousel extends Component {
   render() {
     return (
       <ReactCardCarousel className='row' spread='wide' autoplay={ false } autoplay_speed={ 2500 }>
-        <div className='col' style={ DataCarousel.CARD_STYLE }>
+        <div className='col' id='card1' style={ DataCarousel.CARD_STYLE }>
           <Doughnut data={data} />
         </div>
         <div className='col' style={ DataCarousel.CARD_STYLE }>

@@ -3,9 +3,14 @@ import '../style/PoliticianPage.css'
 import Map from '../components/Map'
 import CapitolPvg from '../components/CapitolPng'
 import DataCarousel from "../components/DataCarousel";
-import ElectionList from '../components/ElectionList'
 
 class PoliticianPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedPoliticians : ['biden']
+    };
+  }
 
   render() {
     return (
@@ -23,13 +28,12 @@ class PoliticianPage extends Component {
             <Map />
           </div>
         </div>
-        <div className="row data-carousel-container">
+        <div className="row data-carousel-container" >
           <div className="col">
             <div className="row data-carousel">
-              <DataCarousel x={3} />
+              <DataCarousel x={3} politicians={this.selectedPoliticians}/>
             </div>
             <div className="row">
-              {/* <ElectionList /> */}
             </div>
           </div>
         </div>

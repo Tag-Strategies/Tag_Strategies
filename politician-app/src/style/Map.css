@@ -8,8 +8,11 @@
 }
 
 .coordinate-box{
-  background-color: red;
-  visibility: hidden;
+  background-color: transparent;
+  visibility: visible;
+  border-radius: 25px;
+  margin-left: 5px;
+  padding-left: 10px;
 }
 
 .map-div{
@@ -26,4 +29,5 @@
 
 .mapboxgl-ctrl-logo{
   visibility: hidden;
+
 }
