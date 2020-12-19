@@ -7,10 +7,16 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from .serializer import *
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
+from django.utils import timezone
+from django.views import generic
+from .models import Politician
 
 @api_view(['GET', 'POST'])
 def politicians_list(request):
-    filter = request.GET['filter']
+    filter = request.GET.get('filter')
     print(filter)
     if request.method == 'GET':
         data = Politician.objects.filter(name__icontains=f"{filter}")
@@ -67,6 +73,22 @@ def get_names(request):
 
     return render (request, 'fecapp/index.html', { "PoliticianList": 
     Politician.objects.all()} )
+
+def view_names(request):
+    
+    return render (request, 'fecapp/index.html', { "PoliticianList": 
+    Politician.objects.all()} )
+
+class IndexView(generic.ListView):
+    template_name = 'fecapp/index.html'
+    context_object_name = 'politician_list'
+
+    def get_queryset(self):
+        """
+        Return the last five published questions (not including those set to be
+        published in the future).
+        """
+        return Politician.objects.all()
 
 
 
