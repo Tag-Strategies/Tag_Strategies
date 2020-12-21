@@ -10,7 +10,7 @@ class PoliticianPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedPoliticians : []
+      selectedPoliticians : [],
     };
   }
 
@@ -35,7 +35,7 @@ class PoliticianPage extends Component {
         </div>
         <div className='row'>
           <div className='col map-div'>
-            <Map />
+            <Map cards={this.state.selectedPoliticians.length} politicians={this.state.selectedPoliticians} StateCapitals={StateCapitals}/>
           </div>
         </div>
         <div className="row data-carousel-container" >

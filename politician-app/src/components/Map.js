@@ -15,7 +15,7 @@ class Map extends Component {
 
   componentDidMount() {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJzdHlsc2tpZXIiLCJhIjoiY2swd2p5OXZhMGdidDNlcGZzYXI2N3RrdSJ9.MY-V2IlbfRAWSEAIdXmhlA';
-    var map = new mapboxgl.Map({
+    this.map = new mapboxgl.Map({
     container: this.mapContainer,
     style: 'mapbox://styles/frstylskier/ckiuj2g2j0q8c19qhf02fqe8q',
     center: [this.state.lng, this.state.lat],
@@ -23,28 +23,41 @@ class Map extends Component {
     pitch: this.state.pitch,
     bearing: this.state.bearing,
     });
-    map.scrollZoom.disable();
-    map.addControl(new mapboxgl.NavigationControl());
-    map.on('move', () => {
+    this.map.scrollZoom.disable();
+    this.map.addControl(new mapboxgl.NavigationControl());
+    this.map.on('move', () => {
         this.setState({
-            lng: map.getCenter().lng.toFixed(4),
-            lat: map.getCenter().lat.toFixed(4),
-            zoom: map.getZoom().toFixed(2),
-            pitch: map.getPitch().toFixed(2),
-            bearing: map.getBearing().toFixed(2),
+            lng: this.map.getCenter().lng.toFixed(4),
+            lat: this.map.getCenter().lat.toFixed(4),
+            zoom: this.map.getZoom().toFixed(2),
+            pitch: this.map.getPitch().toFixed(2),
+            bearing: this.map.getBearing().toFixed(2),
         });
     }); 
-   
-    // document.getElementById('card1').addEventListener('click', function () {
-    //     map.flyTo({
-    //         bearing: 27,
-    //         center: [-91.420679, 31.772537],
-    //         zoom: 6.5,
-    //         pitch: 60,
-    //         essential: true // this animation is considered essential with respect to prefers-reduced-motion
-    //     });
-    // });
+    console.log(this.props.cards)
   }
+  // addCard = () => {
+
+  // }
+
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.cards !== this.props.cards) {
+  //     console.log("cards not correct");
+  //     for (let i = 0 ; i < this.props.cards ; i++){
+  //       document.getElementById(`card${i}`).addEventListener('click', function () {
+  //           this.map.flyTo({
+  //               bearing: 27,
+  //               center: [-91.420679, 31.772537],
+  //               zoom: 6.5,
+  //               pitch: 60,
+  //               essential: true // this animation is considered essential with respect to prefers-reduced-motion
+  //           });
+  //       });
+  //     }
+  //   }
+  // }
+
+
 
   render() {
     return (

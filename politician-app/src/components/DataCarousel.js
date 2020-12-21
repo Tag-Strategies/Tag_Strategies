@@ -63,7 +63,7 @@ class DataCarousel extends Component {
     return (
       <ReactCardCarousel className='row' spread='wide' autoplay={ false } autoplay_speed={ 2500 }>
 
-        {x.map(item => (<div className='col' id='card1' key={item} style={ DataCarousel.CARD_STYLE }><Doughnut data={data} />{item}</div>))}
+        {x.map((item, index) => (<div className='col' id={`card${index}`} key={item} style={ DataCarousel.CARD_STYLE }><Doughnut data={data} />{item}</div>))}
 
         {/* <div className='col' id='card1' style={ DataCarousel.CARD_STYLE }>
           <Doughnut data={data} />
