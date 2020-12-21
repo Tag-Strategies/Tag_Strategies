@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactCardCarousel from 'react-card-carousel';
 import { Doughnut } from 'react-chartjs-2';
-import MultiAxisLineChart from '../components/MultiAxisLineChart'
+// import MultiAxisLineChart from '../components/MultiAxisLineChart'
 
 const data = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -33,10 +33,13 @@ const data = {
 class DataCarousel extends Component {
 
   componentDidMount() {
-    console.log("props should print")
-    console.log(this.props)
+    // console.log("props should print")
+    for (let i = 0; i < this.props.StateCapitals.states.length; i++){
+      // console.log(this.props.StateCapitals.states[i].name, this.props.StateCapitals.states[i].lat, this.props.StateCapitals.states[i].long)
+    }
+    // console.log(this.props.politicians())
+    
   }
-
 
   static get CARD_STYLE() {
     return {
@@ -52,12 +55,17 @@ class DataCarousel extends Component {
     };
   }
 
-  
 
   render() {
+    let x = this.props.politicians;
+    console.log(x)
+    
     return (
       <ReactCardCarousel className='row' spread='wide' autoplay={ false } autoplay_speed={ 2500 }>
-        <div className='col' id='card1' style={ DataCarousel.CARD_STYLE }>
+
+        {x.map(item => (<div className='col' id='card1' key={item} style={ DataCarousel.CARD_STYLE }><Doughnut data={data} />{item}</div>))}
+
+        {/* <div className='col' id='card1' style={ DataCarousel.CARD_STYLE }>
           <Doughnut data={data} />
         </div>
         <div className='col' style={ DataCarousel.CARD_STYLE }>
@@ -71,7 +79,7 @@ class DataCarousel extends Component {
         </div>
         <div className='col' style={ DataCarousel.CARD_STYLE }>
           <MultiAxisLineChart />
-        </div>
+        </div> */}
       </ReactCardCarousel>
     );
   }

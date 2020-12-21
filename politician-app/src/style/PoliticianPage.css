@@ -11,6 +11,13 @@
   z-index: 1;
 }
 
+.multicontainer{
+  position: relative;
+  /* justify-content: center; */
+  /* width: 100%; */
+  
+}
+
 .no-margin{
   margin: 0;
 }

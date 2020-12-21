@@ -35,15 +35,15 @@ class Map extends Component {
         });
     }); 
    
-    document.getElementById('card1').addEventListener('click', function () {
-        map.flyTo({
-            bearing: 27,
-            center: [-91.420679, 31.772537],
-            zoom: 6.5,
-            pitch: 60,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
-    });
+    // document.getElementById('card1').addEventListener('click', function () {
+    //     map.flyTo({
+    //         bearing: 27,
+    //         center: [-91.420679, 31.772537],
+    //         zoom: 6.5,
+    //         pitch: 60,
+    //         essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    //     });
+    // });
   }
 
   render() {

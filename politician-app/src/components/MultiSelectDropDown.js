@@ -9,42 +9,36 @@ export default class MultiSelectDropDown extends React.Component {
     super(props);
     this.state = {
       politicians: [],
-      selectedPoliticians: [],
+      selectedPoliticians: ['default'],
     };
     this.multiselectRef = React.createRef();
-    this.updateOptions = this.updateOptions.bind(this);
-    this.onSelect = this.onSelect.bind(this);
-    this.onRemove = this.onRemove.bind(this);
-    this.getValues = this.getValues.bind(this);
   }
 
+
+
   componentDidMount() {
-    fetchPoliticians('fadsfadf')
-    .then(nameList => {
-        this.setState({
-          politicians: nameList
-        })
-      }
-    )
+    // fetchPoliticians('fadsfadf')
+    // .then(nameList => {
+    //     this.setState({
+    //       politicians: nameList
+    //     })
+    //   }
+    // )
   };
 
-  onSelect(selectedList, selectedItem) {
+  onSelect = (selectedList) => {
     this.setState({
       selectedPoliticians: selectedList
     })
   };
  
-  onRemove(selectedList, removedItem) {
+  onRemove = (selectedList) => {
     this.setState({selectedPoliticians: selectedList})
   };
 
-  getValues(e) {
-    console.log(this.state.selectedPoliticians)
-  };
-
-  updateOptions(e){
-    if (e.length >= 3){
-      fetchPoliticians(e)
+  updateOptions = (eventKeyboardInputCharacters) => {
+    if (eventKeyboardInputCharacters.length >= 3){
+      fetchPoliticians(eventKeyboardInputCharacters)
       .then(nameList => {
           this.setState({
             politicians: nameList
@@ -53,19 +47,19 @@ export default class MultiSelectDropDown extends React.Component {
       )
     };
     for (let i = 0; i < this.state.politicians.length; i++){
-      console.log(i, this.state.politicians[i]["name"], this.state.politicians[i]["party"])
+      // console.log(i, this.state.politicians[i]["name"], this.state.politicians[i]["party"])
     }
   }
 
-  resetValues() {
+  resetValues = () => {
     // By calling the belowe method will reset the selected values programatically
-    this.multiselectRef.current.resetSelectedValues();
+    // this.multiselectRef.current.resetSelectedValues();
   }
 
   render() {
     return (
-      <div className='row no-gutters search-container'> 
-        <div className='col-9'>
+      <div className='row search-container no-gutters'> 
+        <div className='col-8'>
           <Multiselect
             options={this.state.politicians} // Options to display in the dropdown
             onSearch={this.updateOptions}
@@ -80,8 +74,8 @@ export default class MultiSelectDropDown extends React.Component {
           </Multiselect>
         </div>
         <div className='searchbar-spacer'></div>
-        <div className='col-2 button-container'>
-          <Button className='row no-gutters' id='get-started' onClick={this.getValues} variant="primary">
+        <div className='col-3 button-container'>
+          <Button className='row no-gutters' id='get-started' onClick={() => this.props.update(this.state.selectedPoliticians)} variant="primary">
             <div className="col" id='get-started-text'>GET STARTED</div>
           </Button>
         </div>
