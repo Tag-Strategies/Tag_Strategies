@@ -31,7 +31,7 @@ class DataCarousel extends Component {
     return (
       <ReactCardCarousel className='row data-carousel' spread='wide' autoplay={ false } autoplay_speed={ 2500 }>
         {Object.entries(dictionary).map(([key, value]) => (
-          <div className={`container-fluid politician-card ${value.party.toLowerCase()}`} id={`${value.name}`} key={key} >
+          <div className={`container-fluid politician-card ${value.party.toLowerCase()}`} id={`${value.name}`} key={key}  onClick={() => this.props.fly(value.lat, value.lon)}>
             <div className='row'>
               <div className='col'>
                 <h2>{value.name}</h2>
