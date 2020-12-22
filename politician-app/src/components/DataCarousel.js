@@ -4,6 +4,17 @@ import '../style/DataCarousel.css'
 
 class DataCarousel extends Component {
 
+  shouldComponentUpdate(nextProps){
+    if (nextProps.politicians){
+      return nextProps.politicians !== this.props.politicians;
+    }
+  }
+
+  componentDidUpdate(props){
+      // Desired operations: ex setting state
+      console.log('needs updating')
+  }
+
   render() {
     let politicianList = this.props.politicians;
     let dictionary = []
@@ -20,7 +31,7 @@ class DataCarousel extends Component {
     return (
       <ReactCardCarousel className='row data-carousel' spread='wide' autoplay={ false } autoplay_speed={ 2500 }>
         {Object.entries(dictionary).map(([key, value]) => (
-          <div className={`container-fluid politician-card ${value.party.toLowerCase()}`} id={`card${key}`} key={key} >
+          <div className={`container-fluid politician-card ${value.party.toLowerCase()}`} id={`${value.name}`} key={key} >
             <div className='row'>
               <div className='col'>
                 <h2>{value.name}</h2>

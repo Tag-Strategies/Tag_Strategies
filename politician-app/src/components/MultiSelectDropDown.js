@@ -20,12 +20,19 @@ export default class MultiSelectDropDown extends React.Component {
     })
   };
  
-  onRemove = (selectedList) => {
+  onRemove = (selectedList, removedPolitician) => {
+    // console.log(removedPolitician['candidate_id'])
     this.setState({selectedPoliticians: selectedList})
+    this.props.update(this.state.selectedPoliticians)
+    // var element = document.getElementById(removedPolitician['name']);
+    // console.log(element)
+    // if (element){
+    //   element.parentNode.removeChild(element);
+    // }
   };
 
   updateOptions = (eventKeyboardInputCharacters) => {
-    if (eventKeyboardInputCharacters.length >= 3){
+    if (eventKeyboardInputCharacters.length >= 0){
       fetchPoliticians(eventKeyboardInputCharacters)
       .then(nameList => {
           this.setState({
@@ -34,15 +41,16 @@ export default class MultiSelectDropDown extends React.Component {
         }
       )
     };
-    for (let i = 0; i < this.state.politicians.length; i++){
-      console.log('here')
-      console.log(i, this.state.politicians[i]["name"], this.state.politicians[i]["party"])
-    }
+    // for (let i = 0; i < this.state.politicians.length; i++){
+    //   console.log('here')
+    //   console.log(i, this.state.politicians[i]["name"], this.state.politicians[i]["party"])
+    // }
   }
 
   resetValues = () => {
     // By calling the belowe method will reset the selected values programatically
-    // this.multiselectRef.current.resetSelectedValues();
+    this.multiselectRef.current.resetSelectedValues();
+    console.log('restarted')
   }
 
   render() {
