@@ -9,7 +9,7 @@ export default class MultiSelectDropDown extends React.Component {
     super(props);
     this.state = {
       politicians: [],
-      selectedPoliticians: ['default'],
+      selectedPoliticians: [],
     };
     this.multiselectRef = React.createRef();
   }
@@ -21,14 +21,8 @@ export default class MultiSelectDropDown extends React.Component {
   };
  
   onRemove = (selectedList, removedPolitician) => {
-    // console.log(removedPolitician['candidate_id'])
     this.setState({selectedPoliticians: selectedList})
     this.props.update(this.state.selectedPoliticians)
-    // var element = document.getElementById(removedPolitician['name']);
-    // console.log(element)
-    // if (element){
-    //   element.parentNode.removeChild(element);
-    // }
   };
 
   updateOptions = (eventKeyboardInputCharacters) => {
@@ -41,10 +35,6 @@ export default class MultiSelectDropDown extends React.Component {
         }
       )
     };
-    // for (let i = 0; i < this.state.politicians.length; i++){
-    //   console.log('here')
-    //   console.log(i, this.state.politicians[i]["name"], this.state.politicians[i]["party"])
-    // }
   }
 
   resetValues = () => {

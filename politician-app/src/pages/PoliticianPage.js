@@ -15,7 +15,6 @@ class PoliticianPage extends Component {
   }
 
   componentDidMount(){
-    console.log(StateCapitals)
   }
 
   getLat = (state) => {

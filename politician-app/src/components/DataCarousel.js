@@ -12,7 +12,7 @@ class DataCarousel extends Component {
 
   componentDidUpdate(props){
       // Desired operations: ex setting state
-      console.log('needs updating')
+      console.log('Data Carousel Updated [cards] DC ln 15')
   }
 
   render() {

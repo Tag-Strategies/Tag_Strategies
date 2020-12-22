@@ -34,7 +34,6 @@ class Map extends Component {
             bearing: this.map.getBearing().toFixed(2),
         });
     }); 
-    console.log(this.props.cards)
   }
 
   render() {
@@ -42,8 +41,6 @@ class Map extends Component {
       <react-fragment>
         <div className='row map-container' ref={el => this.mapContainer = el}>
         </div>
-        {/* <div className='row coordinate-box' >Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom} | Pitch: {this.state.pitch} | Bearing: {this.state.bearing}
-        </div> */}
       </react-fragment>
     )
   }
