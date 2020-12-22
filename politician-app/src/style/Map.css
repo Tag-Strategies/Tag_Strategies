@@ -1,6 +1,6 @@
 
 .map-container{
-  height: 600px;
+  height: 850px;
   padding-right:-15;
   padding-left:-15;
   background-color: #121212;
@@ -25,9 +25,15 @@
   background-color: #121212;
   color: #121212;
   border-radius: 1px;
+  visibility: hidden;
 }
 
 .mapboxgl-ctrl-logo{
+  visibility: hidden;
+
+}
+
+.mapboxgl-ctrl{
   visibility: hidden;
 
 }

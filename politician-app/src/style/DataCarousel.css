@@ -1,0 +1,82 @@
+:root {
+  --card-width: 600px;
+  --card-padding-top: 40px;
+  --card-text-align: left;
+  --card-color: #121212;
+  --card-border-radius: 10px;
+  --card-font-size: 12px;
+  --card-height: 300px;
+  --card-background-color: white;
+}
+
+
+.politician-card{
+  background-color: var(--card-background-color);
+  border: 5px solid purple;
+  height: var(--card-height);
+  width: var(--card-width);
+  padding-top: var(--card-padding-top);
+  text-align: var(--card-text-align);
+  color: var(--card-color);
+  border-radius: var(--card-border-radius);
+  font-size: var(--card-font-size);
+}
+
+
+.rep{
+  background-color: var(--card-background-color);
+  border: 5px solid red;
+  height: var(--card-height);
+  width: var(--card-width);
+  padding-top: var(--card-padding-top);
+  text-align: var(--card-text-align);
+  color: var(--card-color);
+  border-radius: var(--card-border-radius);
+  font-size: var(--card-font-size);
+}
+.dem{
+  background-color: var(--card-background-color);
+  border: 5px solid blue;
+  height: var(--card-height);
+  width: var(--card-width);
+  padding-top: var(--card-padding-top);
+  text-align: var(--card-text-align);
+  color: var(--card-color);
+  border-radius: var(--card-border-radius);
+  font-size: var(--card-font-size);
+}
+.grn{
+  background-color: var(--card-background-color);
+  border: 5px solid green;
+  height: var(--card-height);
+  width: var(--card-width);
+  padding-top: var(--card-padding-top);
+  text-align: var(--card-text-align);
+  color: var(--card-color);
+  border-radius: var(--card-border-radius);
+  font-size: var(--card-font-size);
+}
+.ind{
+  background-color: var(--card-background-color);
+  border: 5px solid yellow;
+  height: var(--card-height);
+  width: var(--card-width);
+  padding-top: var(--card-padding-top);
+  text-align: var(--card-text-align);
+  color: var(--card-color);
+  border-radius: var(--card-border-radius);
+  font-size: var(--card-font-size);
+}
+
+.data-carousel{
+  position: absolute;
+  top: -400px;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  overflow: visible;
+}
+
+.data-carousel > div{
+  background-color: transparent;
+}

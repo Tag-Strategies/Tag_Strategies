@@ -17,10 +17,17 @@ class PoliticianPage extends Component {
   SelectedPoliticiansHandler = (dropdownSelection) => {
     let dropdownSelectionArray = []
     for (let i=0 ; i < dropdownSelection.length; i++){
-      dropdownSelectionArray.push(dropdownSelection[i]['name'])
+      let politicianName = dropdownSelection[i]['name']
+      let politicianParty = dropdownSelection[i]['party']
+      let politicianId = dropdownSelection[i]['candidate_id']
+      dropdownSelectionArray.push({
+        politicianName : politicianName,
+        politicianParty : politicianParty,
+        politicianId : politicianId
+      })
     }
     this.setState({
-      selectedPoliticians: dropdownSelectionArray
+      selectedPoliticians: dropdownSelectionArray,
     })
   }
 
@@ -35,7 +42,7 @@ class PoliticianPage extends Component {
         </div>
         <div className='row'>
           <div className='col map-div'>
-            <Map cards={this.state.selectedPoliticians.length} politicians={this.state.selectedPoliticians} StateCapitals={StateCapitals}/>
+            <Map politicians={this.state.selectedPoliticians} StateCapitals={StateCapitals}/>
           </div>
         </div>
         <div className="row data-carousel-container" >

@@ -13,9 +13,25 @@ class PoliticianManager(models.Manager):
             table_name = self.model._meta.db_table
             sql = "DROP TABLE %s;" % (table_name, )
             cursor.execute(sql)
+
+
+class OrganizationManager(models.Manager):
+    def delete_everything(self):
+        Organization.objects.all().delete()
+
+    def drop_table(self):
+        from django.db import connection
+        with connection.cursor() as cursor:
+            cursor = connection.cursor()
+            table_name = self.model._meta.db_table
+            sql = "DROP TABLE %s;" % (table_name, )
+            cursor.execute(sql)
+
+
 class Politician(models.Model):
-    name = models.CharField(max_length=200, default="XXXXX XXXXXX")
+    name = models.CharField(max_length=200, default="Politician_Name")
     party = models.CharField(max_length=5, default="none", null=True)
+    candidate_id = models.TextField(null=True)
     objects = PoliticianManager()
 
     def delete_everything(self):
@@ -23,6 +39,13 @@ class Politician(models.Model):
 
     def __str__(self):
         return self.name
+
+class Organization(models.Model):
+    name = models.CharField(max_length=200, default="Organization_Name")
+
+    def __str__(self):
+        return self.name
+
 
 
 

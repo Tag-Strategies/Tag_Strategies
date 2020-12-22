@@ -47,7 +47,8 @@ export default class MultiSelectDropDown extends React.Component {
       )
     };
     for (let i = 0; i < this.state.politicians.length; i++){
-      // console.log(i, this.state.politicians[i]["name"], this.state.politicians[i]["party"])
+      console.log('here')
+      console.log(i, this.state.politicians[i]["name"], this.state.politicians[i]["party"])
     }
   }
 

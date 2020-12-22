@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "fec",
     "django_tables2",
     "corsheaders",
+    "tastypie",
 ]
 
 MIDDLEWARE = [

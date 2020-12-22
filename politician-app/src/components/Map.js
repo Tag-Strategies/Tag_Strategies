@@ -36,36 +36,14 @@ class Map extends Component {
     }); 
     console.log(this.props.cards)
   }
-  // addCard = () => {
-
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.cards !== this.props.cards) {
-  //     console.log("cards not correct");
-  //     for (let i = 0 ; i < this.props.cards ; i++){
-  //       document.getElementById(`card${i}`).addEventListener('click', function () {
-  //           this.map.flyTo({
-  //               bearing: 27,
-  //               center: [-91.420679, 31.772537],
-  //               zoom: 6.5,
-  //               pitch: 60,
-  //               essential: true // this animation is considered essential with respect to prefers-reduced-motion
-  //           });
-  //       });
-  //     }
-  //   }
-  // }
-
-
 
   render() {
     return (
       <react-fragment>
         <div className='row map-container' ref={el => this.mapContainer = el}>
         </div>
-        <div className='row coordinate-box' >Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom} | Pitch: {this.state.pitch} | Bearing: {this.state.bearing}
-        </div>
+        {/* <div className='row coordinate-box' >Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom} | Pitch: {this.state.pitch} | Bearing: {this.state.bearing}
+        </div> */}
       </react-fragment>
     )
   }
