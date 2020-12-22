@@ -5,7 +5,7 @@ class PoliticianSerializer(serializers.ModelSerializer):
     name = serializers.CharField(required=True, max_length=100)
     class Meta:
         model = Politician
-        fields = ('pk', 'name', 'party', 'candidate_id')
+        fields = ('__all__')
 
 
 class OrganizationSerializer(serializers.ModelSerializer):

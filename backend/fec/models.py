@@ -32,6 +32,7 @@ class Politician(models.Model):
     name = models.CharField(max_length=200, default="Politician_Name")
     party = models.CharField(max_length=5, default="none", null=True)
     candidate_id = models.TextField(null=True)
+    state = models.TextField(null=True)
     objects = PoliticianManager()
 
     def delete_everything(self):

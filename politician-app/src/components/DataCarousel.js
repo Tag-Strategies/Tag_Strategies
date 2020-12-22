@@ -8,10 +8,13 @@ class DataCarousel extends Component {
     let politicianList = this.props.politicians;
     let dictionary = []
     for (let i = 0; i < politicianList.length; i++){
-      dictionary = Object.assign({}, politicianList.map((x) => ({
-        "id" : x.politicianId,
-        "name" : x.politicianName,
-        "party" : x.politicianParty,
+      dictionary = Object.assign({}, politicianList.map((politician) => ({
+        "id" : politician.politicianId,
+        "name" : politician.politicianName,
+        "party" : politician.politicianParty,
+        "state" : politician.politicianState,
+        "lat" : politician.lat,
+        "lon" : politician.lon,
       })));
     }
     return (
@@ -29,6 +32,15 @@ class DataCarousel extends Component {
               </div>
               <div className='col-3'>
                 FEC ID: {value.id}
+              </div>
+              <div className='col-2'>
+                State: {value.state}
+              </div>
+              <div className='col-2'>
+                Lat: {value.lat}
+              </div>
+              <div className='col-3'>
+                Lon: {value.lon}
               </div>
             </div>
           </div>

@@ -75,6 +75,7 @@ def get_names(request):
                     name = list_of_politicians[i]['name'],
                     party = list_of_politicians[i]['party'],
                     candidate_id = list_of_politicians[i]['candidate_id'],
+                    state = list_of_politicians[i]['state'],
                     ).save()
     return render (request, './fec/index.html', { "PoliticianList": 
     Politician.objects.all()} )

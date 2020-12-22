@@ -14,16 +14,40 @@ class PoliticianPage extends Component {
     };
   }
 
+  componentDidMount(){
+    console.log(StateCapitals)
+  }
+
+  getLat = (state) => {
+    for ( let i = 0; i < StateCapitals['states'].length; i++){
+      if (state === StateCapitals['states'][i]['abbr']){
+        return StateCapitals['states'][i]['lat']
+      }
+    }
+  }
+
+  getLon = (state) => {
+    for ( let i = 0; i < StateCapitals['states'].length; i++){
+      if (state === StateCapitals['states'][i]['abbr']){
+        return StateCapitals['states'][i]['long']
+      }
+    }
+  }
+
   SelectedPoliticiansHandler = (dropdownSelection) => {
     let dropdownSelectionArray = []
     for (let i=0 ; i < dropdownSelection.length; i++){
       let politicianName = dropdownSelection[i]['name']
       let politicianParty = dropdownSelection[i]['party']
       let politicianId = dropdownSelection[i]['candidate_id']
+      let politicianState = dropdownSelection[i]['state']
       dropdownSelectionArray.push({
         politicianName : politicianName,
         politicianParty : politicianParty,
-        politicianId : politicianId
+        politicianId : politicianId,
+        politicianState : politicianState,
+        lat : this.getLat(politicianState),
+        lon : this.getLon(politicianState)
       })
     }
     this.setState({
