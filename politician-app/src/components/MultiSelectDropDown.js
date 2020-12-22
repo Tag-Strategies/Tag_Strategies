@@ -43,6 +43,12 @@ export default class MultiSelectDropDown extends React.Component {
     console.log('restarted')
   }
 
+  scrollDown = () => {
+    this.props.update(this.state.selectedPoliticians)
+    var element = document.getElementById("mapinmapjs");
+    element.scrollIntoView(true);
+  }
+
   render() {
     return (
       <div className='row search-container no-gutters'> 
@@ -62,7 +68,7 @@ export default class MultiSelectDropDown extends React.Component {
         </div>
         <div className='searchbar-spacer'></div>
         <div className='col-3 button-container'>
-          <Button className='row no-gutters' id='get-started' onClick={() => this.props.update(this.state.selectedPoliticians)} variant="primary">
+          <Button className='row no-gutters' id='get-started' onClick={() => this.scrollDown()} variant="primary">
             <div className="col" id='get-started-text'>GET STARTED</div>
           </Button>
         </div>
