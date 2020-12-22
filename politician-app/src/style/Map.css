@@ -25,15 +25,9 @@
   background-color: #121212;
   color: #121212;
   border-radius: 1px;
-  visibility: hidden;
 }
 
 .mapboxgl-ctrl-logo{
-  visibility: hidden;
-
-}
-
-.mapboxgl-ctrl{
   visibility: hidden;
 
 }

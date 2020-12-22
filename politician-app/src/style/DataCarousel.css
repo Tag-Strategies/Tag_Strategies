@@ -1,14 +1,13 @@
 :root {
-  --card-width: 600px;
-  --card-padding-top: 40px;
+  --card-width: 700px;
+  --card-padding-top: 0px;
   --card-text-align: left;
   --card-color: #121212;
   --card-border-radius: 10px;
   --card-font-size: 12px;
-  --card-height: 300px;
+  --card-height: 250px;
   --card-background-color: white;
 }
-
 
 .politician-card{
   background-color: var(--card-background-color);
@@ -21,7 +20,6 @@
   border-radius: var(--card-border-radius);
   font-size: var(--card-font-size);
 }
-
 
 .rep{
   background-color: var(--card-background-color);
@@ -70,11 +68,12 @@
 
 .data-carousel{
   position: absolute;
-  top: -400px;
+  top: -300px;
   left: 0;
   right: 0;
   background-color: transparent;
   overflow: visible;
+  height: 200px;
 }
 
 .data-carousel > div{

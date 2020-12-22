@@ -69,10 +69,6 @@
   height: 50px;
 }
 
-.searchbar-spacer{
-
-}
-
 #search_input::placeholder{
   color: rgba(0, 0, 0, 0.308);
 }

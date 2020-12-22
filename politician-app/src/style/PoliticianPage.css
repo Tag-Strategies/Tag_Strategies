@@ -13,9 +13,6 @@
 
 .multicontainer{
   position: relative;
-  /* justify-content: center; */
-  /* width: 100%; */
-  
 }
 
 .no-margin{
@@ -30,7 +27,6 @@
 .data-carousel{
   height: 500px;
   background-color: #121212;
-  /* width: 100%; */
 }
 
 .data-carousel > div {

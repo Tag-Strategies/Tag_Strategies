@@ -14,18 +14,6 @@ export default class MultiSelectDropDown extends React.Component {
     this.multiselectRef = React.createRef();
   }
 
-
-
-  componentDidMount() {
-    // fetchPoliticians('fadsfadf')
-    // .then(nameList => {
-    //     this.setState({
-    //       politicians: nameList
-    //     })
-    //   }
-    // )
-  };
-
   onSelect = (selectedList) => {
     this.setState({
       selectedPoliticians: selectedList

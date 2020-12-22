@@ -1,55 +1,16 @@
 #capitol{
   width: 100%;
-  /* position: relative; */
 }
 
 .image-wrapper{
   border-radius: 25px;
   margin-top: 10px;
-  /* width: 100vw; */
 }
 
 .svg-wrapper{
   width: 100%;
-  /* position: relative; */
 }
-
-/* #combo-box{
-  position: absolute;
-  top: 75%;
-  width: 100%;
- 
-} */
-
-
-
-/* .title{
-  color: #d12e28;
-  position: absolute;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  font-family: acumin-pro-extra-condensed, sans-serif;
-  font-size: 135px;
-  font-weight: 700;
-  text-shadow: 5px 2px 5px rgba(36, 36, 39, 0.699);
-  font-style: normal;
-}
-
-.slogan{
-  color: white;
-  position: absolute;
-  top: 53%;
-  width: 100%;
-  text-align: center;
-  font-size: 40px;
-  text-shadow: 2px 2px 2px #4d4d4d;
-  font-family: acumin-pro-wide, sans-serif;
-  font-weight: 650;
-  font-style: italic;
-} */
 
 .image-wrapper{
-  /* height: 100%; */
   overflow: hidden;
 }
