@@ -46,7 +46,7 @@ export default class MultiSelectDropDown extends React.Component {
   scrollDown = () => {
     this.props.update(this.state.selectedPoliticians)
     var element = document.getElementById("mapinmapjs");
-    element.scrollIntoView(true);
+    element.scrollIntoView({behavior: "smooth"});
   }
 
   render() {
