@@ -10,6 +10,7 @@
 
 body {
   height: 100%;
+  
 }
 
 html{
@@ -18,8 +19,8 @@ html{
 
 .container-fluid{
   background-color: #121212;
-  min-width: 700px;
-  max-width: 1300px;
+  /* min-width: 700px; */
+  /* max-width: 1300px; */
 }
 
 .App{

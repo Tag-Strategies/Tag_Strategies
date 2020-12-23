@@ -26,11 +26,11 @@ export default class MultiSelectDropDown extends React.Component {
   };
 
   updateOptions = (eventKeyboardInputCharacters) => {
-    if (eventKeyboardInputCharacters.length >= 0){
+    if (eventKeyboardInputCharacters.length >= 3){
       fetchPoliticians(eventKeyboardInputCharacters)
-      .then(nameList => {
+      .then(queriedListOfPoliticians => {
           this.setState({
-            politicians: nameList
+            politicians: queriedListOfPoliticians
           })
         }
       )

@@ -57,12 +57,13 @@
 .search-container{
   position: absolute;
   top: 70%;
-  left: 10%;
-  right: 10%;
+  left: 50px;
+  right: 50px;
   background-color: transparent;
   border-radius: 10px;
   justify-content: space-between;
   z-index: 3;
+  min-width: 500px;
 }
 
 .optionContainer{

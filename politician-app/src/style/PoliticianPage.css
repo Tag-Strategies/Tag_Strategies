@@ -1,14 +1,9 @@
 
 .map-div{
-  padding-left: 100px;
+  /* padding-left: 100px;
   background-color: #121212;
-  border-radius: 25px;
-}
-
-.spacer{
-  background-color:#d12e28;
-  height: 50px;
-  z-index: 1;
+  padding-top: 100px;
+  width: 100%; */
 }
 
 .multicontainer{
@@ -46,4 +41,8 @@
   right: 0;
   height: 100%;
   padding-bottom: 0px;
+}
+
+#spacer{
+  height: 15px;
 }

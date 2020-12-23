@@ -4,27 +4,21 @@
   padding-right:-15;
   padding-left:-15;
   background-color: #121212;
-  border-radius: 25px;
+  border-radius: 0px;
 }
 
 .coordinate-box{
   background-color: transparent;
   visibility: visible;
-  border-radius: 25px;
+  border-radius: 0px;
   margin-left: 5px;
   padding-left: 10px;
-}
-
-.map-div{
-  background-color: #121212;
-  border: 3px solid white;
-  margin-top: 10px;
 }
 
 .mapboxgl-ctrl-attrib-button{
   background-color: #121212;
   color: #121212;
-  border-radius: 1px;
+  border-radius: 0x;
 }
 
 .mapboxgl-ctrl-logo{

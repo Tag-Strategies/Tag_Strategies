@@ -244,7 +244,8 @@ class PoliticianPage extends Component {
             <MultiSelectDropDown update={(dropdownSelection) => this.SelectedPoliticiansHandler(dropdownSelection)}/>
           </div>
         </div>
-        <div className='row'>
+        <div id='spacer'></div>
+        <div className='row no-gutters'>
           <div className='col map-div'>
             <Map politicians={this.state.selectedPoliticians} StateCapitals={StateCapitals} initialize={(container) => this.initializeMap(container)}/>
           </div>

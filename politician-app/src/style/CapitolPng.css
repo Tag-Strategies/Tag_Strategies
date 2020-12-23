@@ -1,15 +1,16 @@
 #capitol{
-  width: 100%;
+  width: 100vw;
   background-color: transparent;
   position: relative;
   /* top: 3.5%; */
   z-index: 2;
-  border-radius: 25px;
+  border-radius: 0px;
+  min-width: 700px;
 }
 
 
 .image-wrapper{
-  border-radius: 25px;
+  border-radius: 0px;
   /* margin-top: 10px;
   margin-bottom: 10px; */
   /* overflow: hidden; */
@@ -33,6 +34,6 @@
   height: 100%;
   overflow: hidden;
   position: absolute;
-  border-radius: 25px;
+  border-radius: 0px;
 }
 
