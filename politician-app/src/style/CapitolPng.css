@@ -2,21 +2,21 @@
   width: 100%;
   background-color: transparent;
   position: relative;
-  z-index: 3;
+  /* top: 3.5%; */
+  z-index: 2;
+  border-radius: 25px;
 }
 
 
 .image-wrapper{
   border-radius: 25px;
-  margin-top: 10px;
+  /* margin-top: 10px;
+  margin-bottom: 10px; */
+  /* overflow: hidden; */
 }
 
 .svg-wrapper{
   width: 100%;
-}
-
-.image-wrapper{
-  overflow: hidden;
 }
 
 #triangles{
@@ -24,6 +24,15 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
+  /* overflow: hidden; */
+  /* bottom: -500px; */
+}
+
+#triangle-wrapper{
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 25px;
 }
 

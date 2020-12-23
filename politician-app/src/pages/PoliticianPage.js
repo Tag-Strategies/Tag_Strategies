@@ -6,6 +6,7 @@ import DataCarousel from "../components/DataCarousel";
 import MultiSelectDropDown from "../components/MultiSelectDropDown";
 import StateCapitals from "../components/ComponentScripts/StateCapitals.json"
 import mapboxgl from 'mapbox-gl';
+const d3 = window.d3;
 
 class PoliticianPage extends Component {
   constructor(props) {
@@ -21,6 +22,46 @@ class PoliticianPage extends Component {
   }
 
   componentDidMount(){
+    d3.select('#test').trigons({
+      width: 700,
+      height: 1000,
+      size: 100,
+      offset: 0.5,
+      colors: '#121212, #000',
+      colorMode: 'build',
+      colorBuild: 'build11',
+      colorSpace: 'hcl',
+      colorWay: .5,
+      lightDark: .9,
+      responsive: true,
+      startVisible: true,
+      beforeCreate:  function () {
+          console.log('before create');
+      },
+      afterCreate:  function () {
+          console.log('after create');
+      }
+    }).trigonsAnimInit({
+        animOrder: 'out-in',
+        // animIn: 'effect2-bottom',
+        // delayIn: 0,
+        // durationIn: 2000,
+        easeIn : 'bounce-out',
+        animOut: 'effect1-top',
+        delayOut: 0,
+        durationOut: 1800,
+        easeOut: 'cubic-in',
+        eventOn: '#test',
+        eventType: 'click',
+        eventRepeat: true,
+        viewportShift: 'full',
+        beforeAnim: function () {
+            console.log('before animation');
+        },
+        afterAnim: function () {
+          console.log('after animation');
+      }
+    });
   }
 
   getLat = (state) => {
@@ -179,7 +220,7 @@ class PoliticianPage extends Component {
     }
     else {
       this.map.flyTo({
-        center: [lon, lat],
+        center: [lon, lat-3], //subtract here to adjust fly to viewport
         zoom: 7,
         pitch: 60,
         bearing: this.generateRandomInteger(20, -20),
@@ -194,7 +235,9 @@ class PoliticianPage extends Component {
 
   render() {
     return (
-      <div className='container-fluid'>
+      <div className='container-fluid' id='main-container'>
+        <div id='test'>
+        </div>
         <div className='row no-padding multicontainer'>
           <div>
             <CapitolPvg />
@@ -208,11 +251,10 @@ class PoliticianPage extends Component {
         </div>
         <div className="row data-carousel-container" >
           <div className="col">
-            <div className="row data-carousel">
+            <div className="row data-carousel no-gutters">
               <DataCarousel politicians={this.state.selectedPoliticians} StateCapitals={StateCapitals}  fly={(lat, lon) => this.flyTo(lat, lon)}/>
             </div>
-            <div className="row">
-            </div>
+
           </div>
         </div>
       </div>

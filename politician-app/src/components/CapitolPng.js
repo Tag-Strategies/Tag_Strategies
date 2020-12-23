@@ -12,7 +12,7 @@ export default class CapitolPng extends React.Component{
       height: 1200,
       size: 90,
       offset: 0.3,
-      colors: '#000000, #d12e28, #121212',
+      colors: '#fff, #000, #901212',
       colorMode: 'build',
       colorBuild: 'build5',
       colorSpace: 'hcl',
@@ -22,40 +22,47 @@ export default class CapitolPng extends React.Component{
       startVisible: true,
       beforeCreate:  function () {
           console.log('before create');
+
       },
       afterCreate:  function () {
           console.log('after create');
+          var element = document.getElementById("capitol");
+          element.scrollIntoView({behavior: "smooth"});
       }
   }).trigonsAnimInit({
       animOrder: 'in-out',
-      animIn: 'effect3-top',
-      delayIn: 0,
+      animIn: 'effect1-left',
+      delayIn: 2000,
       durationIn: 3000,
-      easeIn : 'bounce-in',
-      animOut: 'effect3-right',
-      delayOut: 0,
-      durationOut: 800,
+      easeIn : 'bounce-out',
+      animOut: 'effect1-top',
+      delayOut: 1000,
+      durationOut: 1800,
       easeOut: 'cubic-in',
-      eventOn: '#capitol',
-      eventType: 'hover',
-      eventRepeat: false,
+      eventOn: '#get-started',
+      eventType: 'viewport',
+      eventRepeat: true,
       viewportShift: 'full',
       beforeAnim: function () {
           console.log('before animation');
       },
       afterAnim: function () {
-          console.log('after animation');
-      }
+        console.log('after animation');
+        // var element = document.getElementById("mapinmapjs");
+        // element.scrollIntoView({behavior: "smooth"});
+     }
   });
   }
 
   render() {
     return (
       <div className='row no-gutters svg-wrapper'>
-        <div className='col image-wrapper'>
-          <img id='capitol' src={backgroundImage} alt='Washington, DC' />
-          <div id='triangles'>
+        <div className='image-wrapper col'>
+          <div className='col' id='triangle-wrapper'>
+            <div id='triangles'>
+            </div>
           </div>
+          <img id='capitol' src={backgroundImage} alt='Washington, DC' />
           <TagHeader />
         </div>
       </div>
