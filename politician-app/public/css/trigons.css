@@ -1,0 +1,28 @@
+/**************************************************************************************
+ * @name:      trigons.css - d3.js plugin for creating and animating colored triangles
+ * @version:   1.3
+ * @requires:  d3.js v5 or later (https://d3js.org)
+ * @URL:       https://trigons.net
+ * @copyright: (c) 2014 - 2019 DeeThemes (https://codecanyon.net/user/DeeThemes)
+ * @licenses:  https://codecanyon.net/licenses/regular
+               https://codecanyon.net/licenses/extended
+***************************************************************************************/
+.tgs-trigons {
+	overflow: hidden;
+}
+.tgs-trigons svg {
+	overflow: hidden!important;
+}
+.tgs-trigons.tgs-responsive {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	padding-bottom: 0%; /*will be changed by the script*/
+	overflow: hidden;
+}
+.tgs-trigons.tgs-responsive svg {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}

@@ -1,6 +1,10 @@
 #capitol{
   width: 100%;
+  background-color: transparent;
+  position: relative;
+  z-index: 3;
 }
+
 
 .image-wrapper{
   border-radius: 25px;
@@ -14,3 +18,12 @@
 .image-wrapper{
   overflow: hidden;
 }
+
+#triangles{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+

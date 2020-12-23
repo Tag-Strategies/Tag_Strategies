@@ -5,6 +5,7 @@ import Hamburger from '../components/HamburgerMenu'
 
 
 export default class Tagheader extends React.Component {
+
   render () {
     return (
       <header className="site-header">
