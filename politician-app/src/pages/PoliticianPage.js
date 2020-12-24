@@ -252,6 +252,8 @@ class PoliticianPage extends Component {
             </div>
           </div>
         </div>
+        <div className='row' id='spacer'>
+        </div>
       </div>
     )
   }

@@ -12,4 +12,4 @@ class OrganizationSerializer(serializers.ModelSerializer):
     name = serializers.CharField(required=True, max_length=100)
     class Meta:
         model = Organization
-        fields = ('pk', 'name')
+        fields = ('__all__')

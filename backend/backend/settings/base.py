@@ -94,7 +94,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATICFILES_DIRS = (base_dir_join("../frontend"),)
+STATICFILES_DIRS = (base_dir_join("../../fec"),)
 
 # Webpack
 WEBPACK_LOADER = {
@@ -119,4 +119,5 @@ COMMIT_SHA = config("HEROKU_SLUG_COMMIT", default="")
 
 #CORS - tutorial https://blog.logrocket.com/creating-an-app-with-react-and-django/
 CORS_ALLOW_ALL_ORIGINS = True
+
 
