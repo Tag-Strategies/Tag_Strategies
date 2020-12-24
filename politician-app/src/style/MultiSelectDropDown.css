@@ -9,6 +9,7 @@
 
 .chip{
   background-color: grey;
+  overflow: hidden;
 }
 
 #multiselectContainerReact{
@@ -27,48 +28,40 @@
   padding-top: 5px;
 }
 
-.get-started-wrapper{
-  height: 100%;
-}
-
 #get-started{
   background-color: #d12e28;
   border-radius: 10px;
   width: 100%;
-  min-width: 160px;
-  height: 40px;
   border: none;
   white-space: nowrap;
-  padding: 0px;
-  
+  height: 100%;
+  overflow: hidden;
+  font-size: 100%;
 }
 
 #get-started-text{
   color: white;
   font-family: acumin-pro-condensed, sans-serif;
-  height: 50px;
-  /* font-size: px; */
   font-weight: 700;
   font-style: normal;
-  font-size: 30px;
-  top: -5px;
+  height: 100%;
+  width: 100%;
 }
 
 .search-container{
   position: absolute;
-  top: 70%;
+  top: 75%;
   left: 50px;
   right: 50px;
   background-color: transparent;
   border-radius: 10px;
   justify-content: space-between;
   z-index: 3;
-  min-width: 500px;
 }
 
 .optionContainer{
   background-color: rgba(43, 40, 40, 0.048);
-  height: 50px;
+  height: 100%;
 }
 
 #search_input::placeholder{
@@ -79,7 +72,10 @@
   width: 100%;
   color: black;
   font-family: acumin-pro-condensed, sans-serif;
-  font-size: px;
   font-weight: 500;
   font-style: normal;
+}
+
+.button-container{
+  max-height: 50px;
 }

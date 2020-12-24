@@ -1,19 +1,17 @@
 #capitol{
-  width: 100vw;
+  width: 100%;
   background-color: transparent;
   position: relative;
-  /* top: 3.5%; */
   z-index: 2;
   border-radius: 0px;
-  min-width: 700px;
 }
 
+.capitol-wrapper{
+  width: 100%;
+}
 
-.image-wrapper{
-  border-radius: 0px;
-  /* margin-top: 10px;
-  margin-bottom: 10px; */
-  /* overflow: hidden; */
+.header-container{
+  width: 100%;
 }
 
 .svg-wrapper{
@@ -21,19 +19,18 @@
 }
 
 #triangles{
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
-  /* overflow: hidden; */
-  /* bottom: -500px; */
+  z-index: 1;
 }
 
 #triangle-wrapper{
   height: 100%;
+  width: 100%;
   overflow: hidden;
   position: absolute;
   border-radius: 0px;
+  z-index: 1;
 }
 

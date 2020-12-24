@@ -56,13 +56,15 @@ export default class CapitolPng extends React.Component{
 
   render() {
     return (
-      <div className='row no-gutters svg-wrapper'>
-        <div className='image-wrapper col'>
+      <div className='no-gutters header-container'>
+        <div className='image-wrapper col no-gutters'>
           <div className='col' id='triangle-wrapper'>
             <div id='triangles'>
             </div>
           </div>
-          <img id='capitol' src={backgroundImage} alt='Washington, DC' />
+          <div className='capitol-wrapper'>
+            <img id='capitol' src={backgroundImage} alt='Washington, DC'/>
+          </div>
           <TagHeader />
         </div>
       </div>

@@ -1,11 +1,11 @@
 :root {
-  --card-width: 700px;
+  --card-width: 100%;
   --card-padding-top: 0px;
   --card-text-align: left;
   --card-color: #121212;
   --card-border-radius: 10px;
   --card-font-size: 12px;
-  --card-height: 250px;
+  --card-height: 300px;
   --card-background-color: white;
 }
 
@@ -68,7 +68,6 @@
 
 .data-carousel{
   position: absolute;
-  top: -300px;
   left: 0;
   right: 0;
   background-color: transparent;
@@ -78,4 +77,14 @@
 
 .data-carousel > div{
   background-color: transparent;
+}
+
+.data-carousel-container{
+  background-color: #121212;
+  height: 100px;
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  background-color: transparent;
+  overflow: visible;
 }

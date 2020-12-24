@@ -1,4 +1,4 @@
-/* .col{
+/* .col, .col-3, .col-8{
   border: 5px dotted blue;
 }
 .row{
@@ -9,8 +9,7 @@
 } */
 
 body {
-  height: 100%;
-  
+
 }
 
 html{
@@ -19,8 +18,8 @@ html{
 
 .container-fluid{
   background-color: #121212;
-  /* min-width: 700px; */
-  /* max-width: 1300px; */
+  overflow: hidden;
+  min-width: 700px;
 }
 
 .App{

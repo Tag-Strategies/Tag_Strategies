@@ -1,27 +1,18 @@
-
 .map-container{
-  height: 850px;
-  padding-right:-15;
-  padding-left:-15;
+  height: 100vh;
   background-color: #121212;
-  border-radius: 0px;
 }
 
 .coordinate-box{
   background-color: transparent;
   visibility: visible;
-  border-radius: 0px;
-  margin-left: 5px;
-  padding-left: 10px;
 }
 
 .mapboxgl-ctrl-attrib-button{
   background-color: #121212;
   color: #121212;
-  border-radius: 0x;
 }
 
 .mapboxgl-ctrl-logo{
   visibility: hidden;
-
 }

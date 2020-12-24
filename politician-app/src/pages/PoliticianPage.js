@@ -236,26 +236,20 @@ class PoliticianPage extends Component {
   render() {
     return (
       <div className='container-fluid' id='main-container'>
-        <div id='test'>
+        <div id='triangle-background'>
         </div>
-        <div className='row no-padding multicontainer'>
-          <div>
-            <CapitolPvg />
-            <MultiSelectDropDown update={(dropdownSelection) => this.SelectedPoliticiansHandler(dropdownSelection)}/>
-          </div>
+        <div className='row multicontainer'>
+          <CapitolPvg />
+          <MultiSelectDropDown update={(dropdownSelection) => this.SelectedPoliticiansHandler(dropdownSelection)}/>
         </div>
-        <div id='spacer'></div>
-        <div className='row no-gutters'>
-          <div className='col map-div'>
-            <Map politicians={this.state.selectedPoliticians} StateCapitals={StateCapitals} initialize={(container) => this.initializeMap(container)}/>
-          </div>
+        <div className='row' id='spacer'>
         </div>
-        <div className="row data-carousel-container" >
-          <div className="col">
-            <div className="row data-carousel no-gutters">
+        <div className=' map-div'>
+          <Map politicians={this.state.selectedPoliticians} StateCapitals={StateCapitals} initialize={(container) => this.initializeMap(container)}/>
+          <div className="row no-gutters data-carousel-container" >
+            <div className="data-carousel">
               <DataCarousel politicians={this.state.selectedPoliticians} StateCapitals={StateCapitals}  fly={(lat, lon) => this.flyTo(lat, lon)}/>
             </div>
-
           </div>
         </div>
       </div>

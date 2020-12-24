@@ -13,7 +13,7 @@ class Map extends Component {
   render() {
     return (
       <react-fragment>
-        <div className='row map-container' id='mapinmapjs' ref={this.mapRef}>
+        <div className='map-container row' id='mapinmapjs' ref={this.mapRef}>
         </div>
       </react-fragment>
     )

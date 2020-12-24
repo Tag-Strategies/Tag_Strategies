@@ -66,10 +66,9 @@ export default class MultiSelectDropDown extends React.Component {
             displayValue={"name"}>
           </Multiselect>
         </div>
-        <div className='searchbar-spacer'></div>
         <div className='col-3 button-container'>
-          <Button className='row no-gutters' id='get-started' onClick={() => this.scrollDown()} variant="primary">
-            <div className="col" id='get-started-text'>GET STARTED</div>
+          <Button id='get-started' onClick={() => this.scrollDown()} variant="primary">
+            <div id='get-started-text'>GET STARTED</div>
           </Button>
         </div>
       </div>

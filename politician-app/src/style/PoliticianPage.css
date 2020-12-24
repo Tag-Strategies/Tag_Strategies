@@ -1,9 +1,6 @@
 
 .map-div{
-  /* padding-left: 100px;
-  background-color: #121212;
-  padding-top: 100px;
-  width: 100%; */
+  position: relative;
 }
 
 .multicontainer{
@@ -19,23 +16,10 @@
   padding-left: 0px;
 }
 
-.data-carousel{
-  height: 500px;
-  background-color: #121212;
-}
-
-.data-carousel > div {
-  background-color: #121212;
-}
-
-.data-carousel-container{
-  background-color: #121212;
-}
-
-#test{
+#triangle-background{
   position: absolute;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -44,5 +28,10 @@
 }
 
 #spacer{
-  height: 15px;
+  height: 35px;
+}
+
+#main-container{
+  position: relative;
+  width: 100vw;
 }
