@@ -32,7 +32,13 @@
   background-color: #d12e28;
 }
 
+#spacer2{
+  height: 70px;
+  background-color: #d12e28;
+}
+
 #main-container{
   position: relative;
   width: 100vw;
 }
+

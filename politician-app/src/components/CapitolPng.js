@@ -1,7 +1,6 @@
 import backgroundImage from './images/method-draw-image.svg'
 import React from 'react'
 import '../style/CapitolPng.css'
-import TagHeader from '../components/TagHeader'
 const d3 = window.d3;
 
 export default class CapitolPng extends React.Component{
@@ -11,7 +10,7 @@ export default class CapitolPng extends React.Component{
       width: 1400,
       height: 1200,
       size: 90,
-      offset: 0.3,
+      offset: 0.5,
       colors: '#fff, #000, #901212',
       colorMode: 'build',
       colorBuild: 'build5',
@@ -50,8 +49,8 @@ export default class CapitolPng extends React.Component{
         console.log('after animation');
         // var element = document.getElementById("mapinmapjs");
         // element.scrollIntoView({behavior: "smooth"});
-     }
-  });
+      }
+    });
   }
 
   render() {
@@ -65,7 +64,7 @@ export default class CapitolPng extends React.Component{
           <div className='capitol-wrapper'>
             <img id='capitol' src={backgroundImage} alt='Washington, DC'/>
           </div>
-          <TagHeader />
+          {/* <TagHeader /> */}
         </div>
       </div>
     )

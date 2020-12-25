@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
+import '../style/Parallax.css'
 import '../style/PoliticianPage.css'
+import '../style/PoliticianPage.scss'
 import Map from '../components/Map'
 import CapitolPvg from '../components/CapitolPng'
 import DataCarousel from "../components/DataCarousel";
 import MultiSelectDropDown from "../components/MultiSelectDropDown";
+import Sidebar from "../components/Sidebar";
+import ParticlesAnimation from "../components/ParticlesAnimation";
 import StateCapitals from "../components/ComponentScripts/StateCapitals.json"
 import mapboxgl from 'mapbox-gl';
-const d3 = window.d3;
 
 class PoliticianPage extends Component {
   constructor(props) {
@@ -21,48 +24,48 @@ class PoliticianPage extends Component {
     };
   }
 
-  componentDidMount(){
-    d3.select('#test').trigons({
-      width: 700,
-      height: 1000,
-      size: 100,
-      offset: 0.5,
-      colors: '#121212, #000',
-      colorMode: 'build',
-      colorBuild: 'build11',
-      colorSpace: 'hcl',
-      colorWay: .5,
-      lightDark: .9,
-      responsive: true,
-      startVisible: true,
-      beforeCreate:  function () {
-          console.log('before create');
-      },
-      afterCreate:  function () {
-          console.log('after create');
-      }
-    }).trigonsAnimInit({
-        animOrder: 'out-in',
-        // animIn: 'effect2-bottom',
-        // delayIn: 0,
-        // durationIn: 2000,
-        easeIn : 'bounce-out',
-        animOut: 'effect1-top',
-        delayOut: 0,
-        durationOut: 1800,
-        easeOut: 'cubic-in',
-        eventOn: '#test',
-        eventType: 'click',
-        eventRepeat: true,
-        viewportShift: 'full',
-        beforeAnim: function () {
-            console.log('before animation');
-        },
-        afterAnim: function () {
-          console.log('after animation');
-      }
-    });
-  }
+  // componentDidMount(){
+  //   d3.select('#test').trigons({
+  //     width: 700,
+  //     height: 1000,
+  //     size: 100,
+  //     offset: 0.5,
+  //     colors: '#121212, #000',
+  //     colorMode: 'build',
+  //     colorBuild: 'build11',
+  //     colorSpace: 'hcl',
+  //     colorWay: .5,
+  //     lightDark: .9,
+  //     responsive: true,
+  //     startVisible: true,
+  //     beforeCreate:  function () {
+  //         console.log('before create');
+  //     },
+  //     afterCreate:  function () {
+  //         console.log('after create');
+  //     }
+  //   }).trigonsAnimInit({
+  //       animOrder: 'out-in',
+  //       // animIn: 'effect2-bottom',
+  //       // delayIn: 0,
+  //       // durationIn: 2000,
+  //       easeIn : 'bounce-out',
+  //       animOut: 'effect1-top',
+  //       delayOut: 0,
+  //       durationOut: 1800,
+  //       easeOut: 'cubic-in',
+  //       eventOn: '#test',
+  //       eventType: 'click',
+  //       eventRepeat: true,
+  //       viewportShift: 'full',
+  //       beforeAnim: function () {
+  //           console.log('before animation');
+  //       },
+  //       afterAnim: function () {
+  //         console.log('after animation');
+  //     }
+  //   });
+  // }
 
   getLat = (state) => {
     for ( let i = 0; i < StateCapitals['states'].length; i++){
@@ -124,7 +127,10 @@ class PoliticianPage extends Component {
             pitch: this.map.getPitch().toFixed(2),
             bearing: this.map.getBearing().toFixed(2),
         });
+        console.log(this.map.style.layers)
     });
+    
+
     this.map.on('mousemove', (e) => {
       var features = this.map.queryRenderedFeatures(e.point);
        
@@ -268,6 +274,9 @@ class PoliticianPage extends Component {
         <div id='triangle-background'>
         </div>
         <div className='row multicontainer'>
+          <div className='sidebar-wrapper'>
+            <Sidebar />
+          </div>
           <CapitolPvg />
           <MultiSelectDropDown update={(dropdownSelection) => this.SelectedPoliticiansHandler(dropdownSelection)}/>
         </div>
@@ -281,7 +290,10 @@ class PoliticianPage extends Component {
             </div>
           </div>
         </div>
-        <div className='row' id='spacer'>
+        <div className='row' id='spacer2'>
+        </div>
+        <div id="particles-js">
+          <ParticlesAnimation />
         </div>
       </div>
     )
