@@ -42,6 +42,7 @@
     "sass-loader": "^10.1.0",
     "stats-js": "^1.0.1",
     "trianglify": "^4.1.1",
+    "tsparticles": "^1.18.11",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
