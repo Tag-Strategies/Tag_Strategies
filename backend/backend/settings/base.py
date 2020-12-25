@@ -98,7 +98,7 @@ USE_TZ = True
 STATICFILES_DIRS = (base_dir_join("backend/fec/static"),)
 print(STATICFILES_DIRS)
 
-# Webpack
+# Webpack...
 WEBPACK_LOADER = {
     "DEFAULT": {
         "CACHE": False,  # on DEBUG should be False
