@@ -6,6 +6,7 @@ from decouple import config  # noqa
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+print("BASE_DIR= " + BASE_DIR)
 
 
 def base_dir_join(*args):
@@ -94,7 +95,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATICFILES_DIRS = (base_dir_join("../backend/fec"),)
+STATICFILES_DIRS = (base_dir_join("backend/fec/static"),)
+print(STATICFILES_DIRS)
 
 # Webpack
 WEBPACK_LOADER = {
