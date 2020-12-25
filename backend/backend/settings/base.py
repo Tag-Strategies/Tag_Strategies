@@ -94,7 +94,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATICFILES_DIRS = (base_dir_join("../backend/fec"),)
+STATICFILES_DIRS = (base_dir_join("../../fec"),)
 
 # Webpack
 WEBPACK_LOADER = {
