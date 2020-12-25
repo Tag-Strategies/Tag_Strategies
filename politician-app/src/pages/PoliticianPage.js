@@ -125,6 +125,35 @@ class PoliticianPage extends Component {
             bearing: this.map.getBearing().toFixed(2),
         });
     });
+    this.map.on('mousemove', (e) => {
+      var features = this.map.queryRenderedFeatures(e.point);
+       
+      // Limit the number of properties we're displaying for
+      // legibility and performance
+      var displayProperties = [
+      'type',
+      'properties',
+      'id',
+      'layer',
+      'source',
+      'sourceLayer',
+      'state'
+      ];
+       
+      var displayFeatures = features.map(function (feat) {
+      var displayFeat = {};
+      displayProperties.forEach(function (prop) {
+      displayFeat[prop] = feat[prop];
+      });
+      return displayFeat;
+      });
+       
+      document.getElementById('spacer').innerHTML = JSON.stringify(
+      displayFeatures,
+      null,
+      2
+      );
+    });
     this.map.on('load', () => {
       // Add a geojson point source.
       // Heatmap layers also work with a vector tile source.
