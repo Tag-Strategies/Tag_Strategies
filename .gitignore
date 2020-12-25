@@ -2,7 +2,7 @@
 /backend/db.sqlite3
 .DS_Store
 .eslintcache
-.env
+# .env
 */settings/local.py
 /staticfiles/*
 /mediafiles/*
