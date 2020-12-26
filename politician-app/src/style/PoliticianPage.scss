@@ -24,7 +24,7 @@
 }
 
 .menu {
-  background: #d12e28;
+  // background: #080201;
   height: 100vh;
   width: 250px;
   right: 0px;
@@ -34,8 +34,12 @@
   transition: all 0.25s ease;
   transform: translateX(100%);
   z-index: 4;
-  border: 3px solid #121212;
+  border: 5px solid #121212;
   border-radius: 20px 0px 0px 20px;
+  // background-image: url("../components/images/noun_Washington\ DC_227337.svg");
+  // background-repeat: no-repeat;
+  // background-position: bottom;
+
 
   a {
     color: #000;
@@ -44,21 +48,26 @@
     padding: 20px;
     background-color: transparent;
     // border: 2px solid black;
-    
+ 
   }
 
   ul {
     padding-top: 40%;
     margin: 0;
     padding-right: 10%;
-    padding-left: 50px;
+    padding-left: 10%;
+    list-style-type: none;
 
     li {
+      background-color: red;
       font-size: 16px;
+      margin: 10px;
       // border-bottom: 1px solid #fff;
       transition: all 0.25s ease;
       animation: fadeInRight .25s ease forwards;
-      opacity:0.5;
+      opacity:.9;
+      border-radius: 15px;
+
 
       &:hover {
         opacity: 0.8;
@@ -73,17 +82,18 @@
 .active {
   opacity:1;
   visibility: visible;
+  max-width: 250px;
   transition: all 0.25s ease;
-  transform: translateX(0);
+  transform: translateX(0%);
 }
 
 @-webkit-keyframes fadeInRight {
   0% {
     opacity: 0;
-    left: 20%;
+    right: 20%;
   }
   100% {
     opacity: 1;
-    left: 0;
+    right: 0;
   }
 }

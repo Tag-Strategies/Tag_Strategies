@@ -1,4 +1,6 @@
 import React from 'react'
+import '../style/Parallax.css'
+
 import '../style/Sidebar.css'
 import logo from '../components/images/2020_TAG_Horizontal_Color_Positive.png'
 import ParticlesAnimation from '../components/ParticlesAnimation'
@@ -48,8 +50,8 @@ export default class Menu extends React.Component {
       <div className='new-header'>
         <button className='menubutton' onClick={this.handleClick}></button>
         <div className={this.state.style}>
-          <ParticlesAnimation />               
-          <ul>
+          {/* <ParticlesAnimation />                */}
+          <ul  className='parallax'>
             {navLinks.map(({ url, name }) => (
               <li key={name}>
                 <a href={url}>{name}</a>
