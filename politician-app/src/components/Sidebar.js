@@ -3,7 +3,6 @@ import '../style/Parallax.css'
 
 import '../style/Sidebar.css'
 import logo from '../components/images/2020_TAG_Horizontal_Color_Positive.png'
-import ParticlesAnimation from '../components/ParticlesAnimation'
 
 const navLinks = [
   { url: '/about-us', name: 'About Us' },

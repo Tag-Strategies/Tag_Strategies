@@ -15,6 +15,21 @@ from django.views import generic
 from .fec_api import *
 
 ##################################################################################################
+# get_candidate_totals("H8NY15148")
+# get_candidate_state_totals("H8NY15148")
+# get_electioneering_by_candidate("H8NY15148")
+# get_candidate_committees("H8NY15148")
+# get_candidate_committees_by_cycle("H8NY15148", 2020)
+# get_committee_info("C00639591")
+# get_committees("H8NY15148")
+# get_committee_reports("C00639591")
+# get_presidential_elections('2020')
+# get_committee_totals("C00639591")
+# get_upcoming_elections()
+# get_committee_contributors("C00639591")
+# get_candidate_summary()
+# get_candidate_top_doner_industries()
+get_social_media_account()
 
 @api_view(['GET', 'POST'])
 def politicians_list(request):
