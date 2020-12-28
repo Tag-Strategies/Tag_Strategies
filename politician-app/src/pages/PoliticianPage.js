@@ -68,6 +68,7 @@ class PoliticianPage extends Component {
       zoom: this.state.zoom,
       pitch: this.state.pitch,
       bearing: this.state.bearing,
+      pitchWithRotate: true,
     });
     
     this.map.scrollZoom.disable();
@@ -84,11 +85,27 @@ class PoliticianPage extends Component {
         });
         console.log(this.map.style.layers)
     });
-    
+
+    this.map.on("load", () => {
+      this.map.addLayer({
+        id: "counties",
+        type: "fill",
+        source: {
+          type: "vector",
+          tiles: [
+            "https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyBasemap/MapServer/tile/6/146/267"
+          ]
+        },
+        "source-layer": "County",
+        paint: {
+          "fill-opacity": 0.1,
+          // "fill-color": "blue"
+        }
+      });
+    });
 
     this.map.on('mousemove', (e) => {
       var features = this.map.queryRenderedFeatures(e.point);
-       
       // Limit the number of properties we're displaying for
       // legibility and performance
       var displayProperties = [
@@ -100,21 +117,20 @@ class PoliticianPage extends Component {
       'sourceLayer',
       'state'
       ];
-       
       var displayFeatures = features.map(function (feat) {
-      var displayFeat = {};
-      displayProperties.forEach(function (prop) {
-      displayFeat[prop] = feat[prop];
+        var displayFeat = {};
+        displayProperties.forEach(function (prop) {
+          displayFeat[prop] = feat[prop];
+        });
+        return displayFeat;
       });
-      return displayFeat;
-      });
-       
       document.getElementById('spacer').innerHTML = JSON.stringify(
-      displayFeatures,
-      null,
-      2
+        displayFeatures,
+        null,
+        2
       );
     });
+
   };
 
   flyTo = (lat, lon) => {

@@ -53,6 +53,8 @@ def format(results, pages):
                 print(key, ' : ', "\x1b[31m" + str(value) + "\x1b[0m")
             elif key == 'candidate_id' or key == 'committee_id':
                 print(key, ' : ', "\x1b[95m" + str(value) + "\x1b[0m")
+            elif key == 'coverage_end_date':
+                print(key, ' : ', "\x1b[44;96m" + str(value) + "\x1b[0m")
             else:
                 print(key, ' : ', value)        
 
@@ -98,7 +100,7 @@ def get_candidate_committees_by_cycle(candidate_id, cycle):
 
             
 def get_committee_info(committee_id):
-    response = requests.get(f"https://api.open.fec.gov/v1/committee/{committee_id}/?sort_nulls_last=false&sort_null_only=false&api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&sort=name&sort_hide_null=false&page=1&per_page=100")
+    response = requests.get(f"https://api.open.fec.gov/v1/committee/{committee_id}/?sort_nulls_last=false&sort_null_only=false&api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&sort=-coverage_end_date&sort_hide_null=false&page=1&per_page=100")
     data = response.json()
     results = data["results"]
     pages = get_total_page_numbers(response)
@@ -106,7 +108,7 @@ def get_committee_info(committee_id):
 
 
 def get_committees(candidate_id):
-    response = requests.get(f"https://api.open.fec.gov/v1/committees/?sort_null_only=false&sort=name&sort_hide_null=false&page=1&per_page=100&api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&sort_nulls_last=false&candidate_id={candidate_id}")
+    response = requests.get(f"https://api.open.fec.gov/v1/committees/?sort_null_only=false&sort=last_file_date&sort_hide_null=false&page=1&per_page=100&api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&sort_nulls_last=false&candidate_id={candidate_id}")
     data = response.json()
     results = data["results"]
     pages = get_total_page_numbers(response)
@@ -114,7 +116,7 @@ def get_committees(candidate_id):
 
 
 def get_committee_reports(committee_id):
-    response = requests.get(f"https://api.open.fec.gov/v1/committee/{committee_id}/reports/?sort_null_only=false&sort=-coverage_end_date&sort_hide_null=false&page=1&api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&sort_nulls_last=false&per_page=100")
+    response = requests.get(f"https://api.open.fec.gov/v1/committee/{committee_id}/reports/?sort_null_only=false&sort=coverage_end_date&sort_hide_null=false&page=1&api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&sort_nulls_last=false&per_page=100")
     data = response.json()
     results = data["results"]
     pages = get_total_page_numbers(response)
