@@ -72,7 +72,8 @@ class PoliticianPage extends Component {
       pitchWithRotate: true,
     });
     
-    this.map.scrollZoom.disable();
+    // this.map.scrollZoom.disable();
+    this.map.doubleClickZoom.disable();
 
     this.map.addControl(new mapboxgl.NavigationControl());
 
@@ -108,8 +109,6 @@ class PoliticianPage extends Component {
 
     this.map.on('mousemove', (e) => {
       var features = this.map.queryRenderedFeatures(e.point);
-      // Limit the number of properties we're displaying for
-      // legibility and performance
       var displayProperties = [
       'type',
       'properties',
@@ -133,6 +132,29 @@ class PoliticianPage extends Component {
       );
     });
 
+      // Create a popup, but don't add it to the map yet.
+    var popup = new mapboxgl.Popup({
+      closeButton: true,
+      closeOnClick: false,
+      anchor: 'right',
+      className: 'popup'
+    });
+    
+    this.map.on('click', 'districts', (e) => {
+      this.map.getCanvas().style.cursor = 'pointer';
+      for (let i = 0; i < e.features.length; i++){
+        if (e.features[i].properties.NAMELSAD){
+          var description = e.features[i].properties.NAMELSAD;
+          var coordinates = [e.features[i].properties.INTPTLON, e.features[i].properties.INTPTLAT];
+        }
+        else {
+          var description = "None...";
+          var coordinates = [-91, 30]
+        }
+      }
+      popup.setLngLat(coordinates).setHTML(description).addTo(this.map);
+      this.flyTo(coordinates[1], coordinates[0])
+    });
   };
 
   flyTo = (lat, lon) => {
