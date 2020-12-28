@@ -8,14 +8,15 @@ import MultiSelectDropDown from "../components/MultiSelectDropDown";
 import Sidebar from "../components/Sidebar";
 import StateCapitals from "../components/ComponentScripts/StateCapitals.json"
 import mapboxgl from 'mapbox-gl';
+import Button from 'react-bootstrap/Button'
 
 class PoliticianPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedPoliticians : [],
-      lon: -91,
-      lat: 33,
+      lon: -98,
+      lat: 30,
       zoom: 3.5,
       pitch: 0,
       bearing: 0,
@@ -83,7 +84,7 @@ class PoliticianPage extends Component {
             pitch: this.map.getPitch().toFixed(2),
             bearing: this.map.getBearing().toFixed(2),
         });
-        console.log(this.map.style.layers)
+        // console.log(this.map.style.layers)
     });
 
     this.map.on("load", () => {
@@ -93,15 +94,16 @@ class PoliticianPage extends Component {
         source: {
           type: "vector",
           tiles: [
-            "https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyBasemap/MapServer/tile/6/146/267"
+            "https://gis-server.data.census.gov/arcgis/rest/services/Hosted/VT_2017_050_00_PY_D1/VectorTileServer/tile/{z}/{y}/{x}.pbf"
           ]
         },
         "source-layer": "County",
         paint: {
           "fill-opacity": 0.1,
-          // "fill-color": "blue"
+          "fill-color": "blue"
         }
       });
+
     });
 
     this.map.on('mousemove', (e) => {
@@ -124,7 +126,7 @@ class PoliticianPage extends Component {
         });
         return displayFeat;
       });
-      document.getElementById('spacer').innerHTML = JSON.stringify(
+      document.getElementById('stats').innerHTML = JSON.stringify(
         displayFeatures,
         null,
         2
@@ -136,8 +138,8 @@ class PoliticianPage extends Component {
   flyTo = (lat, lon) => {
     if (lat === undefined | lon === undefined){
       this.map.flyTo({
-        center: [-91, 33],
-        zoom: 4,
+        center: [-98, 30],
+        zoom: 3.5,
         pitch: 0,
         bearing: 0,
         essential: true // this animation is considered essential with respect to prefers-reduced-motion
@@ -152,6 +154,18 @@ class PoliticianPage extends Component {
         essential: true // this animation is considered essential with respect to prefers-reduced-motion
       });
     }
+  }
+
+  resetView = () => {
+    this.map.flyTo({
+      center: [-98, 30],
+      zoom: 3.5,
+      pitch: 0,
+      bearing: 0,
+      essential: true
+    });
+    var element = document.getElementById("mapinmapjs");
+    element.scrollIntoView({behavior: "smooth"});
   }
 
   generateRandomInteger = (min, max) => {
@@ -173,7 +187,8 @@ class PoliticianPage extends Component {
         <div className='row' id='spacer'>
         </div>
         <div className=' map-div'>
-          <Map politicians={this.state.selectedPoliticians} StateCapitals={StateCapitals} initialize={(container) => this.initializeMap(container)}/>
+          <Map initialize={(container) => this.initializeMap(container)}/>
+          <div className='stats' id='stats' >xxxx</div>
           <div className="row no-gutters data-carousel-container" >
             <div className="data-carousel">
               <DataCarousel politicians={this.state.selectedPoliticians} StateCapitals={StateCapitals}  fly={(lat, lon) => this.flyTo(lat, lon)}/>
@@ -181,6 +196,7 @@ class PoliticianPage extends Component {
           </div>
         </div>
         <div className='row' id='spacer2'>
+          <Button variant="primary" onClick={() => this.resetView()}>Reset View</Button>
         </div>
         {/* <div id="particles-js">
           <ParticlesAnimation />
