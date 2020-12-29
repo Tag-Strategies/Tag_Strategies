@@ -15,7 +15,7 @@ class PoliticianPage extends Component {
     this.handleFlyTo = this.handleFlyTo.bind(this);
     this.state = {
       selectedPoliticians : [],
-      goto: [0,0,0,0,0],
+      goto: [38,-98,0,0,4],
       shouldUpdate: false,
     };
   }
@@ -57,7 +57,7 @@ class PoliticianPage extends Component {
     })
   }
 
-  handleFlyTo = (lat=9, lon=90, pitch=0, bearing=0, zoom=3.5) => {
+  handleFlyTo = (lat=38, lon=-98, pitch=0, bearing=0, zoom=3.5) => {
     console.log("setting state in politician page")
     this.setState({
       goto: [lat, lon, pitch, bearing, zoom],
