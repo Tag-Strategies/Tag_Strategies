@@ -16,27 +16,27 @@ class PoliticianPage extends Component {
     this.state = {
       selectedPoliticians : [],
       goto: [38,-98,0,0,4],
-      // shouldUpdate: false,
     };
   }
 
-  getLat = (state) => {
-    for ( let i = 0; i < StateCapitals['states'].length; i++){
-      if (state === StateCapitals['states'][i]['abbr']){
-        return StateCapitals['states'][i]['lat']
-      }
-    }
-  }
 
-  getLon = (state) => {
-    for ( let i = 0; i < StateCapitals['states'].length; i++){
-      if (state === StateCapitals['states'][i]['abbr']){
-        return StateCapitals['states'][i]['long']
-      }
-    }
-  }
 
   SelectedPoliticiansHandler = (dropdownSelection) => {
+    let getLat = (state) => {
+      for ( let i = 0; i < StateCapitals['states'].length; i++){
+        if (state === StateCapitals['states'][i]['abbr']){
+          return StateCapitals['states'][i]['lat']
+        }
+      }
+    }
+  
+    let getLon = (state) => {
+      for ( let i = 0; i < StateCapitals['states'].length; i++){
+        if (state === StateCapitals['states'][i]['abbr']){
+          return StateCapitals['states'][i]['long']
+        }
+      }
+    }
     let dropdownSelectionArray = []
     for (let i=0 ; i < dropdownSelection.length; i++){
       let politicianName = dropdownSelection[i]['name']
@@ -48,8 +48,8 @@ class PoliticianPage extends Component {
         politicianParty : politicianParty,
         politicianId : politicianId,
         politicianState : politicianState,
-        lat : this.getLat(politicianState),
-        lon : this.getLon(politicianState)
+        lat : getLat(politicianState),
+        lon : getLon(politicianState)
       })
     }
     this.setState({
@@ -58,13 +58,10 @@ class PoliticianPage extends Component {
   }
 
   handleFlyTo = (lat=38, lon=-98, pitch=0, bearing=0, zoom=3.5) => {
-    console.log("setting state in politician page")
     this.setState({
       goto: [lat, lon, pitch, bearing, zoom],
-      // shouldUpdate : !this.state.shouldUpdate
     })
   }
-
 
   render() {
     return (
