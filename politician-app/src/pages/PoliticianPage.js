@@ -12,12 +12,12 @@ import Button from 'react-bootstrap/Button'
 class PoliticianPage extends Component {
   constructor(props) {
     super(props);
+    this.handleFlyTo = this.handleFlyTo.bind(this);
     this.state = {
       selectedPoliticians : [],
       goto: [0,0,0,0,0],
       shouldUpdate: false,
     };
-    this.x = [0,0,0,0,3.5]
   }
 
   getLat = (state) => {
@@ -58,17 +58,11 @@ class PoliticianPage extends Component {
   }
 
   handleFlyTo = (lat=9, lon=90, pitch=0, bearing=0, zoom=3.5) => {
-    // console.log(lat, lon, pitch, bearing, zoom)
-    // if (lat === undefined | lon === undefined){
-    //   lat = 30
-    //   lon = -91
-    // }
-    this.x = [lat, lon, pitch, bearing, zoom]
+    console.log("setting state in politician page")
     this.setState({
       goto: [lat, lon, pitch, bearing, zoom],
       shouldUpdate : !this.state.shouldUpdate
     })
-    console.log(this.x)
   }
 
 
@@ -87,7 +81,7 @@ class PoliticianPage extends Component {
         <div className='row' id='spacer'>
         </div>
         <div className=' map-div'>
-          <Map goto={this.x} shouldUpdate={this.state.shouldUpdate}/>
+          <Map goto={this.state.goto} shouldUpdate={this.state.shouldUpdate}/>
           <div className='stats' id='stats' >xxxx</div>
           <div className="row no-gutters data-carousel-container" >
             <div className="data-carousel">

@@ -6,15 +6,17 @@ class Map extends Component {
   constructor(props) {
     super(props);
     this.mapRef = React.createRef()
+    // this.handleGo = this.handleGo.bind(this);
     this.state = {
-      goto: this.props.goto,
-      districtgoto: this.props.goto,
+      // goto: this.props.goto,
+      // districtgoto: this.props.goto,
+      // go: () => this.go,
       // lon: -98,
       // lat: 30,
       // zoom: 3.5,
       // pitch: 0,
       // bearing: 0,
-      shouldReset: this.props.shouldUpdate,
+      // shouldReset: this.props.shouldUpdate,
     };
   }
 
@@ -129,6 +131,17 @@ class Map extends Component {
         });
       }
 
+      this.go = ([lon, lat, pitch, bearing, zoom]) => {
+        console.log(lon, lat)
+        this.map.flyTo({
+          center: [parseInt(lat), parseInt(lon)-3], //subtract here to adjust fly to viewport
+          pitch: pitch,
+          bearing: bearing,//this.generateRandomInteger(20, -20),
+          zoom: zoom,
+          essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+      }
+
       this.generateRandomInteger = (min, max) => {
         return Math.floor(min + Math.random()*(max + 1 - min))
       }
@@ -142,27 +155,42 @@ class Map extends Component {
           essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
       }
-
-      this.generateRandomInteger = (min, max) => {
-        return Math.floor(min + Math.random()*(max + 1 - min))
-      }
-
-      // this.resetView = () => {
-      //   this.map.flyTo({
-      //     center: [-98, 30],
-      //     zoom: 3.5,
-      //     pitch: 0,
-      //     bearing: 0,
-      //     essential: true
-      //   });
-      //   var element = document.getElementById("mapinmapjs");
-      //   element.scrollIntoView({behavior: "smooth"});
-      // }
     };
     
+    // handleGo(gotoProps) {
+    //   console.log("goto props updated: " + gotoProps);
+    //   this.go(this.props.goto)
+    // }
+          // this.generateRandomInteger = (min, max) => {
+          //   return Math.floor(min + Math.random()*(max + 1 - min))
+          // }
+    
+          // this.resetView = () => {
+          //   this.map.flyTo({
+          //     center: [-98, 30],
+          //     zoom: 3.5,
+          //     pitch: 0,
+          //     bearing: 0,
+          //     essential: true
+          //   });
+          //   var element = document.getElementById("mapinmapjs");
+          //   element.scrollIntoView({behavior: "smooth"});
+          // }
+    
     componentDidUpdate(prevProps) {
-      console.log("go to " + this.state.goto)
-      console.log("props " + this.props.goto)
+      console.log("Map component updated")
+      this.go(this.props.goto)      // console.log("props " + this.props.goto)
+
+      }
+
+      // go = ([lat, lon, pitch, bearing, zoom]) => {
+      //   this.map.flyTo({
+      //     center: [lat, lon-3], //subtract here to adjust fly to viewport
+      //     pitch: pitch,
+      //     bearing: bearing,//this.generateRandomInteger(20, -20),
+      //     zoom: zoom,
+      //     essential: true // this animation is considered essential with respect to prefers-reduced-motion
+      //   });
       // if (this.state.goto !== this.state.goto){
       //   this.setState({ 
       //     goto: this.props.goto
@@ -170,20 +198,20 @@ class Map extends Component {
       //   this.fly()
       // }
       
-    }
-    shouldComponentUpdate(){
-      if (this.state.goto !== this.props.goto){
-        console.log("needs to update")
-        this.setState({
-          goto : this.props.goto
-        })
-        this.fly()
-        return true
-      } else {
-        return false
-      }
+    // }
+    // shouldComponentUpdate(){
+    //   if (this.state.goto !== this.props.goto){
+    //     console.log("needs to update")
+    //     this.setState({
+    //       goto : this.props.goto
+    //     })
+    //     this.fly()
+    //     return true
+    //   } else {
+    //     return false
+    //   }
 
-    }
+    // }
     
     // componentWillReceiveProps(nextProps) {
     //   console.log(nextProps)
@@ -210,6 +238,7 @@ class Map extends Component {
     // }
 
   render() {
+    // this.handleGo(this.props.goto)
     return (
       <react-fragment>
         <div className='map-container row' id='mapinmapjs' ref={this.mapRef}>
