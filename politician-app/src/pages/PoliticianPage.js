@@ -16,7 +16,7 @@ class PoliticianPage extends Component {
     this.state = {
       selectedPoliticians : [],
       goto: [38,-98,0,0,4],
-      shouldUpdate: false,
+      // shouldUpdate: false,
     };
   }
 
@@ -61,7 +61,7 @@ class PoliticianPage extends Component {
     console.log("setting state in politician page")
     this.setState({
       goto: [lat, lon, pitch, bearing, zoom],
-      shouldUpdate : !this.state.shouldUpdate
+      // shouldUpdate : !this.state.shouldUpdate
     })
   }
 
@@ -81,7 +81,7 @@ class PoliticianPage extends Component {
         <div className='row' id='spacer'>
         </div>
         <div className=' map-div'>
-          <Map goto={this.state.goto} shouldUpdate={this.state.shouldUpdate}/>
+          <Map goto={this.state.goto}/>
           <div className='stats' id='stats' >xxxx</div>
           <div className="row no-gutters data-carousel-container" >
             <div className="data-carousel">
@@ -92,9 +92,6 @@ class PoliticianPage extends Component {
         <div className='row' id='spacer2'>
           <Button variant="primary" onClick={() => this.handleFlyTo()}>Reset View</Button>
         </div>
-        {/* <div id="particles-js">
-          <ParticlesAnimation />
-        </div> */}
       </div>
     )
   }
