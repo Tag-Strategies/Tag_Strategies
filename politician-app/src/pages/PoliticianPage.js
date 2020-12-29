@@ -19,8 +19,6 @@ class PoliticianPage extends Component {
     };
   }
 
-
-
   SelectedPoliticiansHandler = (dropdownSelection) => {
     let getLat = (state) => {
       for ( let i = 0; i < StateCapitals['states'].length; i++){
@@ -37,6 +35,7 @@ class PoliticianPage extends Component {
         }
       }
     }
+    
     let dropdownSelectionArray = []
     for (let i=0 ; i < dropdownSelection.length; i++){
       let politicianName = dropdownSelection[i]['name']

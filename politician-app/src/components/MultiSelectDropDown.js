@@ -7,11 +7,11 @@ import { Button } from 'react-bootstrap';
 export default class MultiSelectDropDown extends React.Component {
   constructor(props) {
     super(props);
+    this.multiselectRef = React.createRef();
     this.state = {
       politicians: [],
       selectedPoliticians: [],
     };
-    this.multiselectRef = React.createRef();
   }
 
   onSelect = (selectedList) => {
@@ -35,12 +35,6 @@ export default class MultiSelectDropDown extends React.Component {
         }
       )
     };
-  }
-
-  resetValues = () => {
-    // By calling the belowe method will reset the selected values programatically
-    this.multiselectRef.current.resetSelectedValues();
-    console.log('restarted')
   }
 
   scrollDown = () => {

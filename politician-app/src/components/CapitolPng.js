@@ -2,7 +2,6 @@ import backgroundImage from './images/method-draw-image.svg'
 import React from 'react'
 import '../style/CapitolPng.css'
 const d3 = window.d3;
-
 export default class CapitolPng extends React.Component{
 
   componentDidMount(){
@@ -28,7 +27,7 @@ export default class CapitolPng extends React.Component{
           var element = document.getElementById("capitol");
           element.scrollIntoView({behavior: "smooth"});
       }
-  }).trigonsAnimInit({
+    }).trigonsAnimInit({
       animOrder: 'in-out',
       animIn: 'effect1-left',
       delayIn: 2000,
@@ -51,7 +50,7 @@ export default class CapitolPng extends React.Component{
         // element.scrollIntoView({behavior: "smooth"});
       }
     });
-  }
+  };
 
   render() {
     return (
@@ -64,9 +63,8 @@ export default class CapitolPng extends React.Component{
           <div className='capitol-wrapper'>
             <img id='capitol' src={backgroundImage} alt='Washington, DC'/>
           </div>
-          {/* <TagHeader /> */}
         </div>
       </div>
     )
-  }
-}
+  };
+};

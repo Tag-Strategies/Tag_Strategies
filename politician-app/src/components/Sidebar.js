@@ -49,7 +49,6 @@ export default class Menu extends React.Component {
       <div className='new-header'>
         <button className='menubutton' onClick={this.handleClick}></button>
         <div className={this.state.style}>
-          {/* <ParticlesAnimation />                */}
           <ul  className='parallax'>
             {navLinks.map(({ url, name }) => (
               <li key={name}>

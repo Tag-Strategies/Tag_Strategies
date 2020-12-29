@@ -24,7 +24,6 @@
 }
 
 .menu {
-  // background: #080201;
   height: 100vh;
   width: 250px;
   right: 0px;
@@ -36,10 +35,6 @@
   z-index: 4;
   border: 5px solid #121212;
   border-radius: 20px 0px 0px 20px;
-  // background-image: url("../components/images/noun_Washington\ DC_227337.svg");
-  // background-repeat: no-repeat;
-  // background-position: bottom;
-
 
   a {
     color: #000;
@@ -47,7 +42,6 @@
     display: block;
     padding: 20px;
     background-color: transparent;
-    // border: 2px solid black;
  
   }
 
@@ -62,12 +56,10 @@
       background-color: red;
       font-size: 16px;
       margin: 10px;
-      // border-bottom: 1px solid #fff;
       transition: all 0.25s ease;
       animation: fadeInRight .25s ease forwards;
       opacity:.9;
       border-radius: 15px;
-
 
       &:hover {
         opacity: 0.8;
