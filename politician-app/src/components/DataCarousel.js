@@ -4,15 +4,6 @@ import '../style/DataCarousel.css'
 
 class DataCarousel extends Component {
 
-  shouldComponentUpdate(nextProps){
-    if (nextProps.politicians){
-      return nextProps.politicians !== this.props.politicians;
-    }
-  }
-
-  componentDidUpdate(props){
-  }
-
   render() {
     let politicianList = this.props.politicians;
     let dictionary = []
