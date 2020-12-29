@@ -35,9 +35,13 @@
 }
 
 #spacer2{
-  height: 70px;
-  background-color: #d12e28;
+  height: 40px;
+  background-color: transparent;
   z-index: 10;
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  border-radius: 25px;
 }
 
 #main-container{
@@ -60,6 +64,15 @@
   border-radius: 10px;
   filter: blur(0,4px);
   z-index: 11;
+}
+
+#reset-button{
+  background-color: rgba(0, 0, 255, 0.288);
+  margin-right: 20px;
+}
+
+#back-to-top{
+  background-color: rgba(0, 0, 255, 0.288);
 }
 
 

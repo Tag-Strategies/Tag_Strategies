@@ -62,6 +62,11 @@ class PoliticianPage extends Component {
     })
   }
 
+  handleScroll = () => {
+    var element = document.getElementById("capitol");
+    element.scrollIntoView({behavior: "smooth"});
+  }
+
   render() {
     return (
       <div className='container-fluid' id='main-container'>
@@ -86,7 +91,8 @@ class PoliticianPage extends Component {
           </div>
         </div>
         <div className='row' id='spacer2'>
-          <Button variant="primary" onClick={() => this.handleFlyTo()}>Reset View</Button>
+          <Button id='reset-button' variant="primary" onClick={() => this.handleFlyTo()}>Reset View</Button>
+          <Button id='back-to-top' variant="primary" onClick={() => this.handleScroll()}>Back to Top</Button>
         </div>
       </div>
     )
