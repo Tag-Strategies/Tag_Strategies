@@ -5,6 +5,7 @@ from . import views
 app_name = 'fecapp'
 urlpatterns = [
     path('', views.politicians_list, name='politicianList'),
+    # path('/committees', views.committee_list, name='committeeList'),
     # path('index/', views.IndexView.as_view(), name='index'),
     # path('<int:pk>/', views.DetailView.as_view(), name='detail'),
     # path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),

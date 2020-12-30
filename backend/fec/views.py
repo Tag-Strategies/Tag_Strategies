@@ -18,18 +18,30 @@ from .fec_api import *
 # get_candidate_totals("H8NY15148")
 # get_candidate_state_totals("H8NY15148")
 # get_electioneering_by_candidate("H8NY15148")
-# get_candidate_committees("H8NY15148")
 # get_candidate_committees_by_cycle("H8NY15148", 2020)
 # get_committee_info("C00608398")
 # get_committees("S4LA00065")
-get_committee_reports("C00608398")
+# get_committee_reports("C00608398")
 # get_presidential_elections('2020')
 # get_committee_totals("C00639591")
 # get_upcoming_elections()
 # get_committee_contributors("C00639591")
 # get_candidate_summary()
 # get_candidate_top_doner_industries()
-get_social_media_account()
+# get_social_media_account()
+# get_candidate_donations_by_state('H8NY15148')
+# get_committee_contributions_by_zip("C00639591")
+
+@api_view(['GET'])
+def committee_list(request):
+    filter = request.GET.get('filter')
+    print(filter)
+    data = get_candidate_committees(f"{filter}")
+    # serializer = PoliticianSerializer(data, context={'request': request}, many=True)
+    # print(serializer.data)
+    return Response(data)
+# 
+################################################################################################
 
 @api_view(['GET', 'POST'])
 def politicians_list(request):

@@ -88,7 +88,8 @@ def get_candidate_committees(candidate_id):
     data = response.json()
     results = data["results"]
     pages = get_total_page_numbers(response)
-    format(results, pages)        
+    format(results, pages) 
+    return results       
 
 
 def get_candidate_committees_by_cycle(candidate_id, cycle):
@@ -139,6 +140,20 @@ def get_presidential_elections(year):
 
 def get_committee_contributors(committee_id):
     response = requests.get(f"https://api.open.fec.gov/v1/schedules/schedule_a/?sort_hide_null=false&api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&per_page=100&committee_id={committee_id}&sort_null_only=false&sort=-contribution_receipt_date")
+    data = response.json()
+    results = data["results"]
+    pages = get_total_page_numbers(response)
+    format(results, pages) 
+
+def get_committee_contributions_by_zip(committee_id):
+    response = requests.get(f"https://api.open.fec.gov/v1/schedules/schedule_a/by_zip/?per_page=100&sort_null_only=false&cycle=2020&sort_nulls_last=false&sort_hide_null=false&api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page=1&committee_id={committee_id}")
+    data = response.json()
+    results = data["results"]
+    pages = get_total_page_numbers(response)
+    format(results, pages) 
+
+def get_candidate_donations_by_state(candidate_id):
+    response = requests.get(f"https://api.open.fec.gov/v1/schedules/schedule_a/by_state/by_candidate/?per_page=100&sort_null_only=false&sort_nulls_last=false&cycle=2020&candidate_id={candidate_id}&sort_hide_null=false&api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page=1&election_full=true")
     data = response.json()
     results = data["results"]
     pages = get_total_page_numbers(response)
