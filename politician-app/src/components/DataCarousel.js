@@ -41,11 +41,7 @@ class DataCarousel extends Component {
               <div className='col'>
                 Lon: {value.lon}
               </div>
-              <div className='row'>
-                <div className='col' >
-                  <CommitteeList candidateId={value.id}/>
-                </div>
-              </div>
+              <CommitteeList candidateId={value.id}/>
             </div>
           </div>
         ))}
