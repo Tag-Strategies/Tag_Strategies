@@ -84,7 +84,7 @@ def get_electioneering_by_candidate(candidate_id):
 
 
 def get_candidate_committees(candidate_id):
-    response = requests.get(f"https://api.open.fec.gov/v1/candidate/{candidate_id}/committees/?sort_nulls_last=false&sort_null_only=false&api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&sort=name&sort_hide_null=false&page=1&per_page=100")
+    response = requests.get(f"https://api.open.fec.gov/v1/candidate/{candidate_id}/committees/?sort_nulls_last=false&sort_null_only=false&sort=last_file_date&api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&sort=name&sort_hide_null=false&page=1&per_page=100")
     data = response.json()
     results = data["results"]
     pages = get_total_page_numbers(response)

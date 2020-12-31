@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactCardCarousel from 'react-card-carousel';
 import '../style/DataCarousel.css'
+import CommitteeList from '../components/CommitteeList'
 
 class DataCarousel extends Component {
 
@@ -39,6 +40,11 @@ class DataCarousel extends Component {
               </div>
               <div className='col'>
                 Lon: {value.lon}
+              </div>
+              <div className='row'>
+                <div className='col' >
+                  <CommitteeList candidateId={value.id}/>
+                </div>
               </div>
             </div>
           </div>
