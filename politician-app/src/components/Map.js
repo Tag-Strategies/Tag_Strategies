@@ -104,8 +104,12 @@ class Map extends Component {
            }
             this.popup.setLngLat(coordinates).setHTML(`<h6>${stateName }</h6><h6>${districtName }</h6><div className='reps row'>${this.x}</div>`).addTo(this.map);
           })
-          .then(z => {
+          .then( () => {
             this.go([(coordinates[1]*(1.02)), coordinates[0], 30, 0, 7])
+          }) 
+          .then( () => {
+            var element = document.getElementById("mapinmapjs");
+            element.scrollIntoView({behavior: "smooth"});
           }); 
         }
       }

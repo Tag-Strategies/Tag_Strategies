@@ -24,8 +24,8 @@ export default class CapitolPng extends React.Component{
       },
       afterCreate:  function () {
           console.log('after create');
-          var element = document.getElementById("capitol");
-          element.scrollIntoView({behavior: "smooth"});
+          // var element = document.getElementById("capitol");
+          // element.scrollIntoView({behavior: "smooth"});
       }
     }).trigonsAnimInit({
       animOrder: 'in-out',
