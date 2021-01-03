@@ -17,13 +17,6 @@
   visibility: hidden;
 }
 
-.popup{
-  /* max-height: 200px; */
-  /* width: 100%; */
-  /* overflow-x: scroll; */
-  /* z-index: 99; */
-}
-
 .reps{
   height: 100px;
   overflow: scroll;
