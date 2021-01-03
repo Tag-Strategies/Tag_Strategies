@@ -16,6 +16,7 @@ urlpatterns = [
     path("populate_database_with_names/", views.get_names),
     re_path(r'^api/politicians/$', views.politicians_list),
     re_path(r'^api/politicians/committees', views.committee_list),
+    re_path(r'^api/politicians/representative', views.representatives_by_coordinates),
     re_path(r'^api/organizations/$', views.organizations_list),
     # url(r'^zpi/', include(organization_resource.urls)),
     # path("jsreverse/", django_js_reverse.views.urls_js, name="js_reverse"),

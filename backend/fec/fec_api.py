@@ -165,7 +165,31 @@ def get_upcoming_elections():
     response = requests.get(f"https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyCDwFDZA_9OmHMfdPotbpccgxlXbu7e1fY")
     data = response.json()
     results = data['elections']
-    format(results,1)        
+    format(results,1)  
+
+def get_representatives_by_coordinates(lat, lon):
+    x = get_address_by_coordinates(lat, lon)
+    print("this is x = " + x)
+    coordinate_string = x
+    print(coordinate_string)
+    response = requests.get(f"https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyCDwFDZA_9OmHMfdPotbpccgxlXbu7e1fY&address={coordinate_string}")
+    data = response.json()
+    results = data['officials']
+    # format(results,1)  
+    return results
+
+################## Google Geocoding API #############################
+
+def get_address_by_coordinates(lat, lon):
+    coordinate_string = str(str(lat) + ',' + str(lon))
+    print(coordinate_string)
+    response = requests.get(f"https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCDwFDZA_9OmHMfdPotbpccgxlXbu7e1fY&address={coordinate_string}")
+    data = response.json()
+    results = data['results']
+    for i in range(len(results)):
+        if results[i]['formatted_address']:
+            return results[1]['formatted_address']
+    # format(results,1)        
 
 ################## open secrets API #############################
 

@@ -14,7 +14,8 @@ from django.utils import timezone
 from django.views import generic
 from .fec_api import *
 
-##################################################################################################
+##########################################Test Functions########################################################
+
 # get_candidate_totals("H8NY15148")
 # get_candidate_state_totals("H8NY15148")
 # get_electioneering_by_candidate("H8NY15148")
@@ -31,14 +32,23 @@ from .fec_api import *
 # get_social_media_account()
 # get_candidate_donations_by_state('H8NY15148')
 # get_committee_contributions_by_zip("C00639591")
+# get_representatives_by_coordinates("38.8356262" ,"-77.0528889")
 
+##################################################################################################
+
+@api_view(['GET'])
+def representatives_by_coordinates(request):
+    lat = request.GET.get('lat')
+    lon = request.GET.get('lon')
+    data = get_representatives_by_coordinates(lat, lon)
+    return Response(data)
+# 
+################################################################################################
 @api_view(['GET'])
 def committee_list(request):
     filter = request.GET.get('filter')
     print(filter)
     data = get_candidate_committees(f"{filter}")
-    # serializer = PoliticianSerializer(data, context={'request': request}, many=True)
-    # print(serializer.data)
     return Response(data)
 # 
 ################################################################################################
@@ -123,88 +133,4 @@ def organizations_detail(request, pk):
 
 ##################################################################################################
 
-# def get_total_page_numbers():
-#     response = requests.get("https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page=1&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
-#     data = response.json()
-#     pages = data["pagination"]["pages"]
-#     return pages
 
-# def get_names(request):
-#     Politician.objects.delete_everything()
-#     for i in range(1, get_total_page_numbers()): 
-#         response = requests.get(f"https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page={i}&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
-#         data = response.json()
-#         list_of_politicians = data['results']
-#         for i in range(len(list_of_politicians)):
-#             json_formatted_str = json.dumps(data['results'][i]['party'], indent=2)
-#             print(json_formatted_str)
-#             try: 
-#                 Politician.objects.get(name = list_of_politicians[i]['name'])
-#                 pass
-#             except ObjectDoesNotExist:
-#                 Politician(name = list_of_politicians[i]['name'], party = list_of_politicians[i]['party']).save()
-#     return render (request, './fec/index.html', { "PoliticianList": 
-#     Politician.objects.all()} )
-
-# def view_names(request):
-#     return render (request, './fec/index.html', { "PoliticianList": 
-#     Politician.objects.all()} )
-
-
-
-
-
-
-######################### CODE SCRAPS ####################################
-# from django.views.generic import ListView
-# from rest_framework import viewsets
-# from .serializer import PoliticianSerializer
-# from .models import Politician
-# from django.conf import settings
-# from .forms import SubmitEmbed
-# def save_embed(request):
-#     name_database={}
-#     if True:
-#         form = SubmitEmbed(request.POST)
-#         if True:
-#             #url = form.cleaned_data['url']
-#             r = requests.get("https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page=1&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
-#             json = r.json()
-#             #print(json["pagination"]["pages"])
-#     for j in range(1, 5, json["pagination"]["pages"]):
-#         d = requests.get(f"https://api.open.fec.gov/v1/candidates/?api_key=2c0rL4Z709iNErb0gLygJu3UhNjSi7VGPdIWoe1K&page={j}&sort=name&per_page=100&sort_nulls_last=false&sort_null_only=false&sort_hide_null=false")
-#         other_json = d.json()
-#         for i in range(1, len(other_json['results'])):
-#             #print(other_json['results'][i]['name'])
-#             name_database.append(other_json['results'][i]['name'])
-#     print(name_database)
-#     serializer = PoliticianSerializer(data=name_database)
-#     if serializer.is_valid():
-#         print("here")
-#         embed = serializer.save()
-#         #print(embed)
-#         return render(request, '../fec/x.html', {'embed': name_database})
-#     else:
-#         form = SubmitEmbed()
-#     print(serializer.errors)
-#     return render(request, './fec/index.html', {'form': name_database})
-
-    #     for i in meals:
-    #         meal_data = Meal(
-    #             name = i['strMeal'],
-    #             category = i['strCategory'],
-    #             instructions = i['strInstructions'],
-    #             region = i['strArea'],
-    #             slug = i['idMeal'],
-    #             image_url = i['strMealThumb']
-    #         )
-    #         meal_data.save()
-    #         all_meals = Meal.objects.all().order_by('-id')
-
-# class PoliticianViewSet(viewsets.ModelViewSet):
-#     queryset = Politician.objects.all().order_by('name')
-#     serializer_class = PoliticianSerializer
-
-# class PoliticianListView(ListView):
-#     model = Politician
-#     template_name = './fec/index.html'

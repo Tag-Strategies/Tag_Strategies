@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import mapboxgl from 'mapbox-gl';
+import fetchRepresentative from '../api/getRepresentativeByCoordinates'
 
 import '../style/Map.css'
 class Map extends Component {
   constructor(props) {
     super(props);
     this.mapRef = React.createRef()
+    this.state = {
+      areaRepresentatives: ['Not Here line 11 map.js']
+    }
   }
 
   componentDidMount() {
@@ -68,7 +72,7 @@ class Map extends Component {
       );
     });
 
-    var popup = new mapboxgl.Popup({
+    this.popup = new mapboxgl.Popup({
       closeButton: true,
       closeOnClick: false,
       anchor: 'right',
@@ -79,16 +83,28 @@ class Map extends Component {
       this.map.getCanvas().style.cursor = 'pointer';
       for (let i = 0; i < e.features.length; i++){
         if (e.features[i].properties.NAMELSAD){
-          var description = e.features[i].properties.NAMELSAD;
-          var coordinates = [e.features[i].properties.INTPTLON, e.features[i].properties.INTPTLAT];
-        }
-        else {
-          description = "None...";
-          coordinates = [-91, 30]
+          let districtName = e.features[i].properties.NAMELSAD;
+          let stateName = e.features[i].properties.state;
+          let coordinates = [e.features[i].properties.INTPTLON, e.features[i].properties.INTPTLAT];
+          fetchRepresentative(coordinates[1], coordinates[0])
+          .then(reps => {
+            this.areaReps = []
+            for (let i = 0; i < reps.length; i++){
+              this.areaReps.push(" " + reps[i]['name'])
+            }
+          }).then( () => {
+            this.setState({
+              areaRepresentatives: this.areaReps
+            })
+          })
+          .then( () => {
+            this.popup.setLngLat(coordinates).setHTML(`<h6>${stateName }</h6><h6>${districtName }</h6><div>${this.areaReps}</div>`).addTo(this.map);
+          })
+          .then(z => {
+            this.go([(coordinates[1]*(1.02)), coordinates[0], 30, 0, 7])
+          }); 
         }
       }
-      popup.setLngLat(coordinates).setHTML(description).addTo(this.map);
-      this.go([(coordinates[1]*(1.02)), coordinates[0], 30, 0, 7])
     });
 
     this.go = ([lon, lat, pitch, bearing, zoom]) => {
