@@ -75,8 +75,8 @@ class Map extends Component {
     this.popup = new mapboxgl.Popup({
       closeButton: true,
       closeOnClick: false,
-      anchor: 'right',
-      className: 'popup'
+      anchor: 'left',
+      className: 'popup',
     });
     
     this.map.on('click', 'districts', (e) => {
@@ -98,7 +98,11 @@ class Map extends Component {
             })
           })
           .then( () => {
-            this.popup.setLngLat(coordinates).setHTML(`<h6>${stateName }</h6><h6>${districtName }</h6><div>${this.areaReps}</div>`).addTo(this.map);
+            this.x = ''
+            for(var i = 0; i < this.areaReps.length; i++) {
+              this.x += `<p>${this.areaReps[i]}</p>`
+           }
+            this.popup.setLngLat(coordinates).setHTML(`<h6>${stateName }</h6><h6>${districtName }</h6><div className='reps row'>${this.x}</div>`).addTo(this.map);
           })
           .then(z => {
             this.go([(coordinates[1]*(1.02)), coordinates[0], 30, 0, 7])

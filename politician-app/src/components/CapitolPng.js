@@ -30,7 +30,7 @@ export default class CapitolPng extends React.Component{
     }).trigonsAnimInit({
       animOrder: 'in-out',
       animIn: 'effect1-left',
-      delayIn: 2000,
+      delayIn: 1000,
       durationIn: 3000,
       easeIn : 'bounce-out',
       animOut: 'effect1-top',
