@@ -1,7 +1,13 @@
-.formControl{
-  min-width: 120px;
+
+#demo-simple-select-label{
+  max-width: 100%;
 }
 
-#demo-simple-select{
-  min-width: 120px;
+.MuiSelect-root{
+  max-width: 100%;
 }
+
+.MuiInputBase-root{
+  max-width: 80%;
+}
+
