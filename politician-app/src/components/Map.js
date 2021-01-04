@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import mapboxgl from 'mapbox-gl';
 import fetchRepresentative from '../api/getRepresentativeByCoordinates'
-
 import '../style/Map.css'
 class Map extends Component {
   constructor(props) {
     super(props);
     this.mapRef = React.createRef()
     this.state = {
-      areaRepresentatives: ['Not Here line 11 map.js']
+      areaRepresentatives: ['']
     }
   }
 

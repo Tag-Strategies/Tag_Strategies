@@ -15,12 +15,16 @@ class CommitteeList extends React.Component {
       });
   }
 
+  handleSelectedCommittee = (committee) => {
+    this.props.updateSelectedCommittee(committee)
+  }
+
   render() {
     return (
       <div>
         {this.committees && this.committees[0] && 
           <div className='row' >
-            <DropdownSelect committees={this.committees}/>
+            <DropdownSelect committees={this.committees} updateSelectedCommittee={(committee) => this.handleSelectedCommittee(committee)}/>
           </div>
         }
       </div>

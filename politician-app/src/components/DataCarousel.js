@@ -7,14 +7,26 @@ class DataCarousel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedCard: ''
+      selectedCard: '',
+      selectedCommittee: ''
     }
   }
 
-  handleSelectedCard = () => {
+  handleSelectedCard = (selectedCard) => {
     this.setState({
-      selectedCard: ''
+      selectedCard: selectedCard
     })
+  }
+
+  handleSelectedCommittee = (selectedCommittee) => {
+    this.setState({
+      selectedCommittee: selectedCommittee
+    })
+  }
+
+  handleClick = (lat, lon, bearing, range, zoom, candidate_id, committee) => {
+    this.props.fly(lat, lon, bearing, range, zoom)
+    this.handleSelectedCard(candidate_id)
   }
 
   render() {
@@ -28,12 +40,13 @@ class DataCarousel extends Component {
         "state" : politician.politicianState,
         "lat" : politician.lat,
         "lon" : politician.lon,
+        "committee": this.state.selectedCommittee
       })));
     }
     return (
       <ReactCardCarousel className='row data-carousel' spread='wide' autoplay={ false } autoplay_speed={ 2500 }>
         {Object.entries(dictionary).map(([key, value]) => (
-          <div className={`politician-card ${value.party ? value.party.toLowerCase() : 'n/a'}`} id={`${value.name}`} key={key}  onClick={() => this.props.fly(value.lat, value.lon, (value.lat ? 60 : 0), (value.lat ? 0 : 0), (value.lat ? 6 : 3.5))}>
+          <div className={`politician-card ${value.party ? value.party.toLowerCase() : 'n/a'}`} id={`${value.name}`} key={key}  onClick={() => this.handleClick(value.lat, value.lon, (value.lat ? 60 : 0), (value.lat ? 0 : 0), (value.lat ? 6 : 3.5), value.id, value.committee)}>
             <div className='row no-gutters'>
               <h2>{value.name}</h2>
             </div>
@@ -53,7 +66,7 @@ class DataCarousel extends Component {
               <div className='col'>
                 Lon: {value.lon}
               </div>
-              <CommitteeList candidateId={value.id}/>
+              <CommitteeList candidateId={value.id} updateSelectedCommittee={(committee)=> this.handleSelectedCommittee(committee)}/>
             </div>
           </div>
         ))}

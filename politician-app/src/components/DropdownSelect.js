@@ -12,6 +12,7 @@ export default function SimpleSelect(props) {
 
   const handleChange = (event) => {
     setAge(event.target.value);
+    props.updateSelectedCommittee(event.target.value)
   };
 
   console.log(props.committees)
