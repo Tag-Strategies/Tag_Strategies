@@ -18,11 +18,25 @@
 }
 
 .reps{
-  height: 100px;
-  overflow: scroll;
 }
 
 .mapboxgl-popup-content{
-  max-height: 200px;
-  overflow: scroll;
+  max-height: 300px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.popup-image{
+}
+
+.popup-text{
+}
+
+.popup-rep{
+border-top: 1px dotted black;
+padding: 5px;
+}
+
+.mapboxgl-popup{
+  min-width: 350px;
 }

@@ -168,14 +168,15 @@ def get_upcoming_elections():
     format(results,1)  
 
 def get_representatives_by_coordinates(lat, lon):
-    x = get_address_by_coordinates(lat, lon)
-    print("this is x = " + x)
-    coordinate_string = x
-    print(coordinate_string)
+    coordinate_string = get_address_by_coordinates(lat, lon)
     response = requests.get(f"https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyCDwFDZA_9OmHMfdPotbpccgxlXbu7e1fY&address={coordinate_string}")
     data = response.json()
     results = data['officials']
-    # format(results,1)  
+    for j in range(0, len(data['officials'])):
+        for i in range(0, len(data['offices'])):
+            if j in data["offices"][i]['officialIndices']:
+                z = {'office' : data['offices'][i]['name']}
+                results[j].update(z)
     return results
 
 ################## Google Geocoding API #############################

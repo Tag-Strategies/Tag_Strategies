@@ -76,7 +76,7 @@ class Map extends Component {
       closeButton: true,
       closeOnClick: false,
       anchor: 'left',
-      className: 'popup',
+      class: 'popup',
     });
     
     this.map.on('click', 'districts', (e) => {
@@ -89,9 +89,14 @@ class Map extends Component {
           fetchRepresentative(coordinates[1], coordinates[0])
           .then(reps => {
             this.areaReps = []
+            this.office = {}
+            this.imageOfRepresentative = {}
             for (let i = 0; i < reps.length; i++){
-              this.areaReps.push(" " + reps[i]['name'])
+              this.areaReps.push(reps[i]['name'])
+              this.office[reps[i]['name'].toString()] = reps[i]['office']
+              this.imageOfRepresentative[reps[i]['name'].toString()] = reps[i]['photoUrl']
             }
+            console.log(this.imageOfRepresentative)
           }).then( () => {
             this.setState({
               areaRepresentatives: this.areaReps
@@ -100,9 +105,15 @@ class Map extends Component {
           .then( () => {
             this.x = ''
             for(var i = 0; i < this.areaReps.length; i++) {
-              this.x += `<p>${this.areaReps[i]}</p>`
-           }
-            this.popup.setLngLat(coordinates).setHTML(`<h6>${stateName }</h6><h6>${districtName }</h6><div className='reps row'>${this.x}</div>`).addTo(this.map);
+              if (this.imageOfRepresentative[this.areaReps[i]]){
+                this.x += `<div class='popup-rep' ><img class='popup-image' src=${this.imageOfRepresentative[this.areaReps[i]]} alt="Political Photo" width="50" height="60"></img><div class='popup-text' >${this.areaReps[i]} : ${this.office[this.areaReps[i]]}</div></div>`
+              }
+              else {
+                this.x += `<div class='popup-rep' >${this.areaReps[i]} : ${this.office[this.areaReps[i]]}</div>`
+              }
+
+            }
+            this.popup.setLngLat(coordinates).setHTML(`<h6>${stateName }</h6><h6>${districtName }</h6><div class='reps'>${this.x}</div>`).addTo(this.map);
           })
           .then( () => {
             this.go([(coordinates[1]*(1.02)), coordinates[0], 30, 0, 7])
