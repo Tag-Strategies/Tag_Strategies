@@ -106,7 +106,7 @@ class Map extends Component {
             this.x = ''
             for(var i = 0; i < this.areaReps.length; i++) {
               if (this.imageOfRepresentative[this.areaReps[i]]){
-                this.x += `<div class='popup-rep' ><img class='popup-image' src=${this.imageOfRepresentative[this.areaReps[i]]} alt="Political Photo" width="50" height="60"></img><div class='popup-text' >${this.areaReps[i]} : ${this.office[this.areaReps[i]]}</div></div>`
+                this.x += `<div class='popup-rep' ><img class='popup-image' src=${this.imageOfRepresentative[this.areaReps[i]]} alt="No Photo"  height="60"></img><div class='popup-text' >${this.areaReps[i]} : ${this.office[this.areaReps[i]]}</div></div>`
               }
               else {
                 this.x += `<div class='popup-rep' >${this.areaReps[i]} : ${this.office[this.areaReps[i]]}</div>`

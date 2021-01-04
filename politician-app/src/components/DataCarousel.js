@@ -4,6 +4,18 @@ import '../style/DataCarousel.css'
 import CommitteeList from '../components/CommitteeList'
 
 class DataCarousel extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedCard: ''
+    }
+  }
+
+  handleSelectedCard = () => {
+    this.setState({
+      selectedCard: ''
+    })
+  }
 
   render() {
     let politicianList = this.props.politicians;
